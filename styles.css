@@ -879,6 +879,18 @@ html {
     -webkit-backdrop-filter: blur(20px);
 }
 
+/* 證書彈窗需要更高的z-index */
+#certificateModal {
+    z-index: 3000;
+    padding: 20px;
+}
+
+#certificateModal.show {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
 .modal-content {
     background: white;
     margin: 50px auto;
@@ -904,7 +916,7 @@ html {
     font-size: 30px;
     cursor: pointer;
     color: #666;
-    z-index: 1;
+    z-index: 10;
     background: white;
     border-radius: 50%;
     width: 40px;
@@ -912,7 +924,15 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow-light);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
 .modal-body {
@@ -2347,17 +2367,24 @@ html {
     display: inline-block;
     background: #667eea;
     color: white;
-    padding: 6px 16px;
-    border-radius: 6px;
+    padding: 8px 18px;
+    border-radius: 8px;
     text-decoration: none;
     font-size: 0.9rem;
     margin-top: 10px;
+    margin-right: 8px;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
 }
 
 .activity-link:hover {
     background: #5568d3;
-    transform: translateX(5px);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.5);
+}
+
+.activity-link i {
+    margin-right: 6px;
 }
 
 .activity-status {
@@ -2423,9 +2450,36 @@ html {
     margin: 0;
 }
 
-/* 證書彈窗中的直向證書 */
+/* 證書彈窗樣式優化 */
+.certificate-modal-content {
+    max-width: 95vw;
+    max-height: 95vh;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: visible;
+}
+
+.certificate-modal-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.certificate-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* 證書彈窗中的圖片 */
 #certificateModalImage {
-    max-width: 100%;
+    max-width: 85vw;
     max-height: 70vh;
     width: auto;
     height: auto;
@@ -2433,18 +2487,51 @@ html {
     display: block;
     margin: 0 auto;
     transition: all 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 #certificateModalImage.portrait-certificate {
-    max-height: 80vh;
-    max-width: 90%;
+    max-height: 70vh;
+    max-width: 55vw;
 }
 
 /* 證書彈窗中需要旋轉的證書 */
 #certificateModalImage.rotate-certificate {
     transform: rotate(90deg);
-    max-height: 90vh;
-    max-width: 80vh;
+    max-height: 50vw;
+    max-width: 65vh;
+    margin: 0 auto;
+}
+
+/* 證書資訊overlay */
+.certificate-info-overlay {
+    margin-top: 15px;
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.certificate-info-overlay h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.certificate-info-overlay p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.certificate-date-display {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
 /* 照片圖庫 */

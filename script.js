@@ -428,9 +428,9 @@ function initProjectModals() {
             title: 'TasteBuddies 美食推薦App',
             description: '負責「TasteBuddies」WEB App的程式設計與前端開發，從前端介面設計規劃、使用者體驗優化到後端API串接，皆由我負責。此專案使用React Native + Firebase架構實現推薦制度與即時互動功能，並採用敏捷式開發，注重使用者體驗與技術整合。這個App致力於解決「不知道吃什麼」的選擇困難，幫助使用者提升日常用餐效率。',
             image: 'https://via.placeholder.com/600x400/667eea/ffffff?text=TasteBuddies+App',
-            video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+            video: 'https://www.youtube.com/embed/lnz3dtOpI50',
             tech: ['React Native', 'Firebase', 'UI/UX設計', '敏捷開發', 'JavaScript', '即時互動'],
-            demoLink: '#',
+            demoLink: 'https://youtube.com/shorts/lnz3dtOpI50',
             codeLink: '#',
             presentationLink: '#'
         },
@@ -1111,7 +1111,7 @@ const timelineData = {
         description: '高中階段就讀師大附中，培養多元興趣與學習基礎，並參與學生自治擔任學生會活動長與畢聯會活動長，累積活動規劃經驗。透過參與學生會活動，學習如何組織大型校園活動、與不同部門溝通協調，以及預算規劃與執行。',
         activities: [
             { name: '學生會活動規劃', description: '擔任學生會活動長，規劃並執行多場校園活動', participants: '全校師生參與' },
-            { name: '畢業典禮籌備', description: '擔任畢聯會活動長，負責畢業典禮與相關活動籌備', participants: '應屆畢業生' }
+            { name: '畢業舞會籌備', description: '擔任畢聯會活動長，負責畢業相關活動籌備', participants: '應屆畢業生' }
         ],
         certificates: []
     },
@@ -1121,7 +1121,8 @@ const timelineData = {
         position: '人文暨科技跨領域學士學位學程、輔系資訊管理學系',
         description: '就讀人文暨科技跨領域學士學位學程，輔系資訊管理學系。一至三年級在校學業成績總平均GPA 4.06，系排名4/44(9.09%)，連續三年下學期榮獲國立中山大學書香獎。擔任第十七屆學生會活動部長、第十八屆學生議會副議長、秘書長及財務稽核委員會召集委員，同時擔任第十八屆學生會選舉委員會主任委員，積極參與校園事務與學生自治。',
         activities: [
-            { name: '學業表現', description: 'GPA 4.06，系排名 4/44 (9.09%)', participants: '個人成就' },
+            { name: '學業表現', description: 'GPA 4.06，系排名 4/44 (9.09%)，連續三年榮獲書香獎', participants: '個人成就' },
+            { name: 'Google數位人才探索計畫', description: '完成Google數位行銷與Google Cloud學程，學習數位廣告投放、AI應用、雲端運算與機器學習', participants: '2025年暑期' },
             { name: '學生會活動部長', description: '規劃執行大型校園活動，包括社團聯展、校慶活動等', participants: '2000+人參與' },
             { name: '學生議會副議長', description: '主持議會會議，推動校園民主參與', participants: '全校學生代表' },
             { name: '選舉委員會主委', description: '負責學生會選舉事務，確保選舉公正透明', participants: '全校選民' }
@@ -1132,7 +1133,9 @@ const timelineData = {
             { name: '112學生會幹部當選證明', image: 'images/certificates/student-union-elected-112.jpg' },
             { name: '112學生會幹部聘書', image: 'images/certificates/student-union-appointment-112.jpg' },
             { name: '112社團幹部服務證書', image: 'images/certificates/club-service-112.jpg' },
-            { name: '名次證明書', image: 'images/certificates/rank-certificate.jpg', portrait: true, rotate: true }
+            { name: '名次證明書', image: 'images/certificates/rank-certificate.jpg', portrait: true, rotate: true },
+            { name: '2025年Google數位行銷學程結業證書', image: 'images/certificates/google-digital-marketing-cert.jpg' },
+            { name: '2025年Google Cloud學程結業證書', image: 'images/certificates/google-cloud-cert.jpg' }
         ]
     },
     'aifinsys': {
@@ -1143,7 +1146,7 @@ const timelineData = {
         activities: [
             { name: '官網建置與維護', description: '負責公司官網開發與維護', link: 'https://aifinsys.com' },
             { name: '永續金融論壇籌備', description: '籌備2025年10月21日永續金融論壇', participants: '業界專家與學者' },
-            { name: 'GREENUP!平台開發', description: '開發永續基礎發展能力測驗練習平台', participants: '學習者' },
+            { name: 'GREENUP!平台開發', description: '開發永續基礎發展能力測驗練習平台', link: 'https://greenup-sustainability-exam-platfor-three.vercel.app/', participants: '學習者' },
             { name: '進駐金融科技園區', description: '獲選進駐高雄金融科技創新園區', participants: '產學合作' }
         ],
         certificates: [
@@ -1161,8 +1164,9 @@ const timelineData = {
         position: '專題研究員 & 全端開發者',
         description: '在教授宋世祥老師的指導下，進行專題「TasteBuddies美食配對交友APP開發」之研究。TasteBuddies是一款協助選擇餐廳的APP，致力於解決人們在面臨眾多食物選擇時的困擾。負責所有程式開發與系統建置，包括前端介面設計(React Native)、後端架構串接(Node.js)、推薦演算法的實作，以及與資料庫的整合(Supabase)。',
         activities: [
-            { name: 'APP功能開發', description: 'SwiftTaste單人探索、Buddies!群組決策、地圖探索等功能', tech: 'React Native + Supabase' },
+            { name: 'APP功能開發', description: 'SwiftTaste單人探索、Buddies!群組決策、地圖探索等功能', tech: 'React Native + Supabase', link: 'https://senior-project-ruby.vercel.app/' },
             { name: '配對演算法設計', description: '開發餐廳推薦配對演算法，整合個人與群組偏好', tech: 'Algorithm Design' },
+            { name: '專題Demo影片', description: 'TasteBuddies APP功能展示影片', video: 'https://youtube.com/shorts/lnz3dtOpI50' },
             { name: '中原大學100K創業競賽', description: '參加創新創業募資競賽', status: '已參賽' },
             { name: 'Design For Taiwan', description: '第十屆社會創新挑戰賽', status: '進入複賽' }
         ],
@@ -1222,6 +1226,7 @@ function openTimelineModal(experienceId) {
             ${activity.participants ? `<span class="activity-meta"><i class="fas fa-users"></i> ${activity.participants}</span>` : ''}
             ${activity.tech ? `<span class="activity-meta"><i class="fas fa-code"></i> ${activity.tech}</span>` : ''}
             ${activity.link ? `<a href="${activity.link}" target="_blank" class="activity-link"><i class="fas fa-external-link-alt"></i> 查看網站</a>` : ''}
+            ${activity.video ? `<a href="${activity.video}" target="_blank" class="activity-link"><i class="fab fa-youtube"></i> 觀看影片</a>` : ''}
             ${activity.status ? `<span class="activity-status">${activity.status}</span>` : ''}
         `;
         activitiesGrid.appendChild(card);
