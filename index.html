@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人作品集 - 國立中山大學</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- 背景粒子效果 -->
+    <div id="particles"></div>
+
+    <!-- 載入動畫 -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <div class="loader-text">Loading...</div>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- 導航列 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">&lt;Portfolio/&gt;</span>
+            </div>
+            <div class="nav-menu">
+                <div class="nav-item"><a href="#home">首頁</a></div>
+                <div class="nav-item"><a href="#about">關於我</a></div>
+                <div class="nav-item"><a href="#timeline">經歷</a></div>
+                <div class="nav-item"><a href="#courses">修課歷程</a></div>
+                <div class="nav-item"><a href="#portfolio">作品集</a></div>
+                <div class="nav-item"><a href="#achievements">成就</a></div>
+                <div class="nav-item"><a href="#contact">聯絡</a></div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首頁區域 -->
+    <section id="home" class="section home-section">
+        <div class="home-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="typing-text">你好，我是</span>
+                    <span class="name-highlight">葉昱辰</span>
+                </h1>
+                <p class="hero-subtitle">
+                    國立中山大學 人文暨科技跨領域學士學位學程<br>
+                    輔系資訊管理學系
+                </p>
+                <div class="hero-tags">
+                    <span class="tag">App Developer</span>
+                    <span class="tag">UI/UX Designer</span>
+                    <span class="tag">FinTech Business Manager</span>
+                    <span class="tag">Student Leader</span>
+                    <span class="tag">地方創生實踐者</span>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToSection('portfolio')">
+                        <i class="fas fa-code"></i> 查看作品
+                    </button>
+                    <button class="btn-secondary" onclick="scrollToSection('contact')">
+                        <i class="fas fa-envelope"></i> 聯絡我
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-animation">
+                    <div class="code-line">
+                        <span class="keyword">const</span>
+                        <span class="variable">developer</span>
+                        <span class="operator">=</span>
+                        <span class="string">"passionate learner"</span>
+                    </div>
+                    <div class="code-line">
+                        <span class="keyword">function</span>
+                        <span class="function">createInnovation</span>() {
+                    </div>
+                    <div class="code-line indent">
+                        <span class="keyword">return</span>
+                        <span class="string">"amazing projects"</span>
+                    </div>
+                    <div class="code-line">}</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+    </section>
+
+    <!-- 關於我區域 -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">關於我</h2>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <p>我是葉昱辰，來自國立中山大學人文暨科技跨領域學士學位學程，輔系資訊管理學系。從小父母便鼓勵我在不同領域中探索與嘗試，在成長過程中，我逐漸養成對科技的濃厚興趣。這樣的學習歷程，讓我能夠在多元的背景下培養跨域整合的能力，也在專案與課程中不斷磨練自己運用資訊技術解決實際問題的能力。我致力於結合人文思維與科技應用，將資訊技術實作與使用者導向思維結合，解決當代社會所面臨的各種複雜挑戰。
+                    </p>
+                    <p>在大學期間，我力求課業與課外活動兼顧，我力求課業與課外活動兼顧，盡己所能的投入資訊管理相關課程的學習，並取得不錯的成績。透過實際參與專題研究、創業實踐、地方創生與學生自治，我累積了豐富的跨域整合經驗，具備良好的團隊合作、溝通協調與問題解決能力。
+                    </p>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML/CSS</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>SQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <span>React Native</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-figma"></i>
+                            <span>Figma</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-fire"></i>
+                            <span>Firebase</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git/GitHub</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats" data-aos="fade-left">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="13">0</div>
+                        <div class="stat-label">完成專案</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="5">0</div>
+                        <div class="stat-label">技術領域</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 時間軸區域 -->
+    <section id="timeline" class="section timeline-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">我的經歷</h2>
+            <div class="timeline">
+                <div class="timeline-item clickable-timeline" data-aos="fade-up" data-aos-delay="100"
+                    onclick="openTimelineModal('high-school')">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019 - 2022</div>
+                        <h3>國立台灣師範大學附屬高級中學 <i class="fas fa-external-link-alt timeline-link-icon"></i></h3>
+                        <p>高中階段就讀師大附中，培養多元興趣與學習基礎，並參與學生自治擔任學生會活動長與畢聯會活動長，累積活動規劃經驗</p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">多元發展</span>
+                            <span class="skill-tag">學習基礎</span>
+                            <span class="skill-tag">活動規劃</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item clickable-timeline" data-aos="fade-up" data-aos-delay="200"
+                    onclick="openTimelineModal('nsysu')">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 現在</div>
+                        <h3>國立中山大學 <i class="fas fa-external-link-alt timeline-link-icon"></i></h3>
+                        <p>就讀人文暨科技跨領域學士學位學程，輔系資訊管理學系。擔任學生會活動部長與學生議會副議長，積極參與校園事務與學生自治</p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">跨領域學習</span>
+                            <span class="skill-tag">資訊管理</span>
+                            <span class="skill-tag">學生領導</span>
+                            <span class="skill-tag">活動規劃</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item clickable-timeline" data-aos="fade-up" data-aos-delay="300"
+                    onclick="openTimelineModal('aifinsys')">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Feb 2025 - 現在</div>
+                        <h3>中山永續金融科技 業務經理 <i class="fas fa-external-link-alt timeline-link-icon"></i></h3>
+                        <p>共同創辦AI FinTech Corp.，開發AI氣候演算避險解決方案</p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">ESG</span>
+                            <span class="skill-tag">FinTech</span>
+                            <span class="skill-tag">創業</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item clickable-timeline" data-aos="fade-up" data-aos-delay="400"
+                    onclick="openTimelineModal('tastebuddies')">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023/下 - 現在</div>
+                        <h3>畢業專題 TasteBuddies APP <i class="fas fa-external-link-alt timeline-link-icon"></i></h3>
+                        <p>美食配對交友APP開發，負責全端開發與演算法設計</p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">React Native</span>
+                            <span class="skill-tag">全端開發</span>
+                            <span class="skill-tag">演算法</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item clickable-timeline" data-aos="fade-up" data-aos-delay="450"
+                    onclick="openTimelineModal('local-creation')">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 - 2025</div>
+                        <h3>地方創生 - 鹽夏不夜埕系列 <i class="fas fa-external-link-alt timeline-link-icon"></i></h3>
+                        <p>連續三年參與策展，從平面設計、裝置藝術到美食推薦系統</p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">平面設計</span>
+                            <span class="skill-tag">裝置藝術</span>
+                            <span class="skill-tag">地方創生</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 修課歷程區域 -->
+    <section id="courses" class="section courses-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">修課歷程</h2>
+
+            <!-- 學期分類選擇 -->
+            <div class="semester-filter" data-aos="fade-up" data-aos-delay="100">
+                <button class="semester-btn active" data-semester="major">主修課程</button>
+                <button class="semester-btn" data-semester="minor">輔系課程</button>
+                <button class="semester-btn" data-semester="elective">選修課程</button>
+            </div>
+
+            <!-- 修課歷程內容 -->
+            <div class="courses-content">
+
+                <!-- 111學年度第一學期 (2022年9月-2023年1月) -->
+                <div class="semester-group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="semester-header">
+                        <h3 class="semester-title">
+                            <i class="fas fa-calendar-alt"></i>
+                            111學年度第一學期 (2022年9月-2023年1月)
+                        </h3>
+                        <div class="semester-stats">
+                            <span class="credit-count">修習學分：19學分</span>
+                            <span class="gpa-display">學期GPA：3.78</span>
+                        </div>
+                    </div>
+
+                    <div class="courses-grid">
+                        <!-- 主修課程 -->
+                        <div class="course-card major" data-category="major">
+                            <div class="course-header">
+                                <h4 class="course-name">文化人類學</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">跨領域學程核心課程，了解人類文化多樣性</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">文化分析</span>
+                                    <span class="skill-chip">人類學思維</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card major" data-category="major">
+                            <div class="course-header">
+                                <h4 class="course-name">基礎程式應用(英)</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A-</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">學習Python程式設計，英語授課</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">Python</span>
+                                    <span class="skill-chip">英語學習</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card major" data-category="major">
+                            <div class="course-header">
+                                <h4 class="course-name">科技創新趨勢與需求探索</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-b">B-</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">探索科技發展趨勢與社會需求</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">趨勢分析</span>
+                                    <span class="skill-chip">創新思維</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card elective" data-category="elective">
+                            <div class="course-header">
+                                <h4 class="course-name">人工智慧導論</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">AI基礎概念與應用</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">機器學習</span>
+                                    <span class="skill-chip">AI應用</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card minor" data-category="minor">
+                            <div class="course-header">
+                                <h4 class="course-name">行銷管理</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A-</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">行銷策略與管理實務</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">行銷策略</span>
+                                    <span class="skill-chip">市場分析</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card elective" data-category="elective">
+                            <div class="course-header">
+                                <h4 class="course-name">程式設計概論</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">程式設計基礎概念與實作</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">程式設計</span>
+                                    <span class="skill-chip">邏輯思維</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 111學年度第二學期 (2023年2月-2023年7月) -->
+                <div class="semester-group" data-aos="fade-up" data-aos-delay="250">
+                    <div class="semester-header">
+                        <h3 class="semester-title">
+                            <i class="fas fa-calendar-alt"></i>
+                            111學年度第二學期 (2023年2月-2023年7月)
+                        </h3>
+                        <div class="semester-stats">
+                            <span class="credit-count">修習學分：20學分</span>
+                            <span class="gpa-display">學期GPA：4.17</span>
+                        </div>
+                    </div>
+
+                    <div class="courses-grid">
+                        <div class="course-card major" data-category="major">
+                            <div class="course-header">
+                                <h4 class="course-name">創客基礎</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">學習Autodesk Inventor 3D繪圖</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">Autodesk Inventor</span>
+                                    <span class="skill-chip">3D繪圖</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card major" data-category="major">
+                            <div class="course-header">
+                                <h4 class="course-name">科學探究</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">科學方法與研究思維</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">研究方法</span>
+                                    <span class="skill-chip">邏輯思維</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card major" data-category="major">
+                            <div class="course-header">
+                                <h4 class="course-name">設計溝通與表達</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">設計思維與溝通技巧</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">設計思維</span>
+                                    <span class="skill-chip">視覺溝通</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card major" data-category="major">
+                            <div class="course-header">
+                                <h4 class="course-name">跨領域探索</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">1學分</span>
+                                    <span class="course-grade grade-a">A</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">跨領域學程必修，探索多元領域知識</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">跨域整合</span>
+                                    <span class="skill-chip">知識探索</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card elective" data-category="elective">
+                            <div class="course-header">
+                                <h4 class="course-name">創意街區發展實務與藝術管理</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">實際參與鹽夏不夜埕策展</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">策展實務</span>
+                                    <span class="skill-chip">地方創生</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 112學年度第一學期 (2023年9月-2024年1月) -->
+                <div class="semester-group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="semester-header">
+                        <h3 class="semester-title">
+                            <i class="fas fa-calendar-alt"></i>
+                            112學年度第一學期 (2023年9月-2024年1月)
+                        </h3>
+                        <div class="semester-stats">
+                            <span class="credit-count">修習學分：24學分</span>
+                            <span class="gpa-display">學期GPA：3.93</span>
+                        </div>
+                    </div>
+
+                    <div class="courses-grid">
+                        <div class="course-card major" data-category="major">
+                            <div class="course-header">
+                                <h4 class="course-name">設計思考</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">人本設計思維與創新方法</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">設計思考</span>
+                                    <span class="skill-chip">人本設計</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card major" data-category="major">
+                            <div class="course-header">
+                                <h4 class="course-name">當代社會問題與創新案例研究</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A-</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">社會問題分析與創新解決方案</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">社會分析</span>
+                                    <span class="skill-chip">問題解決</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card minor" data-category="minor">
+                            <div class="course-header">
+                                <h4 class="course-name">計算機概論</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">電腦科學基礎概念，資管系入門</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">程式邏輯</span>
+                                    <span class="skill-chip">電腦科學</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card elective" data-category="elective">
+                            <div class="course-header">
+                                <h4 class="course-name">基礎程式設計應用</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">程式設計實務應用</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">Python</span>
+                                    <span class="skill-chip">程式設計</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card elective" data-category="elective">
+                            <div class="course-header">
+                                <h4 class="course-name">創新科技應用服務</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">學習使用App Inventor2開發行動應用</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">App Inventor2</span>
+                                    <span class="skill-chip">行動開發</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 112學年度第二學期 (2024年2月-2024年7月) -->
+                <div class="semester-group" data-aos="fade-up" data-aos-delay="350">
+                    <div class="semester-header">
+                        <h3 class="semester-title">
+                            <i class="fas fa-calendar-alt"></i>
+                            112學年度第二學期 (2024年2月-2024年7月)
+                        </h3>
+                        <div class="semester-stats">
+                            <span class="credit-count">修習學分：23學分</span>
+                            <span class="gpa-display">學期GPA：4.26</span>
+                        </div>
+                    </div>
+
+                    <div class="courses-grid">
+                        <div class="course-card major" data-category="major">
+                            <div class="course-header">
+                                <h4 class="course-name">空間調查分析與規劃</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">都市規劃與空間分析</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">GIS</span>
+                                    <span class="skill-chip">都市規劃</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card major" data-category="major">
+                            <div class="course-header">
+                                <h4 class="course-name">跨領域創新專題（一）</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">跨領域專題研究與實作</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">專題研究</span>
+                                    <span class="skill-chip">跨域合作</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card major" data-category="major">
+                            <div class="course-header">
+                                <h4 class="course-name">基礎研究方法</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">研究方法論與實務應用</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">研究方法</span>
+                                    <span class="skill-chip">學術寫作</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card elective" data-category="elective">
+                            <div class="course-header">
+                                <h4 class="course-name">經濟學</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">總體經濟學基礎理論</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">經濟分析</span>
+                                    <span class="skill-chip">市場理論</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card elective" data-category="elective">
+                            <div class="course-header">
+                                <h4 class="course-name">永續生活理念UX/UI設計實務</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">學習使用Figma進行UI/UX設計</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">Figma</span>
+                                    <span class="skill-chip">UI/UX設計</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card minor" data-category="minor">
+                            <div class="course-header">
+                                <h4 class="course-name">管理學</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">管理學基礎理論與實務</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">管理理論</span>
+                                    <span class="skill-chip">組織行為</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card major" data-category="major">
+                            <div class="course-header">
+                                <h4 class="course-name">跨領域實作</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">1學分</span>
+                                    <span class="course-grade grade-a">A</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">整合人文與科技的實際專案開發</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">專案管理</span>
+                                    <span class="skill-chip">跨域合作</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 113學年度第一學期 (2024年9月-2025年1月) -->
+                <div class="semester-group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="semester-header">
+                        <h3 class="semester-title">
+                            <i class="fas fa-calendar-alt"></i>
+                            113學年度第一學期 (2024年9月-2025年1月)
+                        </h3>
+                        <div class="semester-stats">
+                            <span class="credit-count">修習學分：26學分</span>
+                            <span class="gpa-display">學期GPA：3.98</span>
+                        </div>
+                    </div>
+
+                    <div class="courses-grid">
+                        <div class="course-card major" data-category="major">
+                            <div class="course-header">
+                                <h4 class="course-name">跨領域創新專題(二)</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">跨領域專題研究與實作延續</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">專題研究</span>
+                                    <span class="skill-chip">跨域整合</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card elective" data-category="elective">
+                            <div class="course-header">
+                                <h4 class="course-name">商管軟體設計(研)</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">2學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">商業管理軟體開發與應用</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">軟體開發</span>
+                                    <span class="skill-chip">商業應用</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card minor" data-category="minor">
+                            <div class="course-header">
+                                <h4 class="course-name">微積分</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">微積分基礎理論與應用</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">數學分析</span>
+                                    <span class="skill-chip">微積分</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card minor" data-category="minor">
+                            <div class="course-header">
+                                <h4 class="course-name">會計學(一)</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">會計學基礎理論與實務</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">會計原理</span>
+                                    <span class="skill-chip">財務報表</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card minor" data-category="minor">
+                            <div class="course-header">
+                                <h4 class="course-name">資訊經濟學</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">資訊科技與經濟理論整合</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">經濟理論</span>
+                                    <span class="skill-chip">資訊應用</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card minor" data-category="minor">
+                            <div class="course-header">
+                                <h4 class="course-name">會計學實習(一)</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">1學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">會計學實務操作與演練</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">會計實務</span>
+                                    <span class="skill-chip">實作演練</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card minor" data-category="minor">
+                            <div class="course-header">
+                                <h4 class="course-name">企業資料通訊</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">企業通訊網路與資料傳輸</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">網路通訊</span>
+                                    <span class="skill-chip">資料傳輸</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card minor" data-category="minor">
+                            <div class="course-header">
+                                <h4 class="course-name">WEB程式設計(英)</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-b">B</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">網頁程式設計，英語授課</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">Web開發</span>
+                                    <span class="skill-chip">英語學習</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 113學年度第二學期 (2025年2月-2025年7月) -->
+                <div class="semester-group" data-aos="fade-up" data-aos-delay="450">
+                    <div class="semester-header">
+                        <h3 class="semester-title">
+                            <i class="fas fa-calendar-alt"></i>
+                            113學年度第二學期 (2025年2月-2025年7月)
+                        </h3>
+                        <div class="semester-stats">
+                            <span class="credit-count">修習學分：22學分</span>
+                            <span class="gpa-display">學期GPA：4.22</span>
+                        </div>
+                    </div>
+
+                    <div class="courses-grid">
+                        <div class="course-card major" data-category="major">
+                            <div class="course-header">
+                                <h4 class="course-name">創新設計或創業專題(一)</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">2學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">創新設計與創業專題實作</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">創新設計</span>
+                                    <span class="skill-chip">創業實務</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card elective" data-category="elective">
+                            <div class="course-header">
+                                <h4 class="course-name">創業講堂</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">創業實務與企業家精神</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">創業思維</span>
+                                    <span class="skill-chip">商業模式</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card major" data-category="major">
+                            <div class="course-header">
+                                <h4 class="course-name">跨領域產業合作</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">1學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">跨領域產業專案合作實務</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">產業合作</span>
+                                    <span class="skill-chip">專案實作</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card elective" data-category="elective">
+                            <div class="course-header">
+                                <h4 class="course-name">程式應用</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">Python爬蟲、AI應用、Line Bot開發</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">Python爬蟲</span>
+                                    <span class="skill-chip">AI應用</span>
+                                    <span class="skill-chip">Line Bot</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card minor" data-category="minor">
+                            <div class="course-header">
+                                <h4 class="course-name">程式設計(英)</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">程式設計進階，英語授課</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">程式設計</span>
+                                    <span class="skill-chip">英語學習</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card minor" data-category="minor">
+                            <div class="course-header">
+                                <h4 class="course-name">資料庫管理</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">資料庫設計與管理實務</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">SQL</span>
+                                    <span class="skill-chip">資料庫設計</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card minor" data-category="minor">
+                            <div class="course-header">
+                                <h4 class="course-name">管理資訊系統</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A+</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">企業資訊系統規劃與管理</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">MIS</span>
+                                    <span class="skill-chip">系統規劃</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-card minor" data-category="minor">
+                            <div class="course-header">
+                                <h4 class="course-name">電子商務(英)</h4>
+                                <div class="course-meta">
+                                    <span class="course-credits">3學分</span>
+                                    <span class="course-grade grade-a">A</span>
+                                </div>
+                            </div>
+                            <div class="course-info">
+                                <p class="course-description">電子商務理論與實務，英語授課</p>
+                                <div class="course-skills">
+                                    <span class="skill-chip">電子商務</span>
+                                    <span class="skill-chip">英語學習</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 學習統計總覽 -->
+                <div class="courses-summary" data-aos="fade-up" data-aos-delay="500">
+                    <h3 class="summary-title">
+                        <i class="fas fa-chart-line"></i>
+                        學習統計總覽
+                    </h3>
+                    <div class="summary-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number">135</div>
+                                <div class="stat-label">總修學分</div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number">4.06</div>
+                                <div class="stat-label">累計GPA</div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number">15</div>
+                                <div class="stat-label">程式類課程</div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number">12</div>
+                                <div class="stat-label">資管輔系課程</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品集區域 -->
+    <section id="portfolio" class="section portfolio-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">作品集</h2>
+            <div class="portfolio-filter" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active" data-filter="all">全部</button>
+                <button class="filter-btn" data-filter="mobile">行動應用</button>
+                <button class="filter-btn" data-filter="fintech">金融科技</button>
+                <button class="filter-btn" data-filter="leadership">學生自治</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- TasteBuddies App -->
+                <div class="portfolio-item mobile" data-aos="fade-up" data-aos-delay="200">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/400x250/667eea/ffffff?text=TasteBuddies+App"
+                            alt="TasteBuddies">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <button class="action-btn" onclick="openProjectModal('tastebuddies')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="action-btn" onclick="window.open('#', '_blank')">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                                <button class="action-btn" onclick="window.open('#', '_blank')">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>TasteBuddies 美食推薦App</h3>
+                        <p>解決「不知道吃什麼」的選擇困難，使用React Native + Firebase架構開發的美食推薦應用</p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">UI/UX設計</span>
+                            <span class="tech-tag">敏捷開發</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 中山永續金融科技 -->
+                <div class="portfolio-item fintech" data-aos="fade-up" data-aos-delay="300">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/400x250/4CAF50/ffffff?text=FinTech+ESG" alt="永續金融科技">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <button class="action-btn" onclick="openProjectModal('aifinsys')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="action-btn" onclick="window.open('https://aifinsys.com', '_blank')">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                                <button class="action-btn" onclick="window.open('#', '_blank')">
+                                    <i class="fas fa-presentation"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>中山永續金融科技</h3>
+                        <p>負責網站建置與ESG研討會規劃，推動團隊AI演算法與風險場景應用，協助企業建立永續投資策略</p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">ESG</span>
+                            <span class="tech-tag">FinTech</span>
+                            <span class="tech-tag">AI演算法</span>
+                            <span class="tech-tag">風險管理</span>
+                            <span class="tech-tag">永續投資</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 學生自治經驗 -->
+                <div class="portfolio-item leadership" data-aos="fade-up" data-aos-delay="400">
+                    <div class="portfolio-image">
+                        <!-- Carousel for student activities -->
+                        <div class="activity-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-slide active">
+                                    <img src="images/student-activities/club-expo.jpg" alt="山海奇航社團聯展"
+                                        onerror="this.src='https://via.placeholder.com/400x250/f093fb/ffffff?text=山海奇航社團聯展'">
+                                    <div class="carousel-caption">山海奇航社團聯展 (1000+人)</div>
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="images/student-activities/anniversary.jpg" alt="時光迴旋43周年校慶"
+                                        onerror="this.src='https://via.placeholder.com/400x250/667eea/ffffff?text=時光迴旋43周年校慶'">
+                                    <div class="carousel-caption">時光迴旋43周年校慶 (1000+人 9.1/10分)</div>
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="images/student-activities/mental-health.jpg" alt="心情急轉彎心輔議題活動"
+                                        onerror="this.src='https://via.placeholder.com/400x250/4CAF50/ffffff?text=心情急轉彎心輔活動'">
+                                    <div class="carousel-caption">心情急轉彎心輔議題活動 (200+人 9.03/10分)</div>
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="images/student-activities/christmas.jpg" alt="有Bear來聖誕Free Hug"
+                                        onerror="this.src='https://via.placeholder.com/400x250/FFA726/ffffff?text=聖誕Free+Hug活動'">
+                                    <div class="carousel-caption">有Bear來聖誕Free Hug活動 (50+人)</div>
+                                </div>
+                            </div>
+                            <button class="carousel-prev" onclick="changeSlide(this, -1)">&#10094;</button>
+                            <button class="carousel-next" onclick="changeSlide(this, 1)">&#10095;</button>
+                            <div class="carousel-dots">
+                                <span class="dot active" onclick="currentSlide(this, 0)"></span>
+                                <span class="dot" onclick="currentSlide(this, 1)"></span>
+                                <span class="dot" onclick="currentSlide(this, 2)"></span>
+                                <span class="dot" onclick="currentSlide(this, 3)"></span>
+                            </div>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <button class="action-btn" onclick="openProjectModal('leadership')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>學生自治與活動規劃</h3>
+                        <p>大二擔任第十七屆學生會活動部長，主辦多場大型校園活動；大三擔任第十八屆學生議會副議長、秘書長及財務稽核委員會召集委員，同時擔任第十八屆學生會選舉委員會主任委員。成功規劃並執行大型校園活動，累計參與人數超過2000人，推動心理健康議題性活動獲得高度好評。
+                        </p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">活動部長</span>
+                            <span class="tech-tag">議會副議長</span>
+                            <span class="tech-tag">選委會主委</span>
+                            <span class="tech-tag">活動規劃</span>
+                            <span class="tech-tag">團隊領導</span>
+                            <span class="tech-tag">議事經驗</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 技能展示專案 -->
+                <div class="portfolio-item mobile" data-aos="fade-up" data-aos-delay="500">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/400x250/9C27B0/ffffff?text=Skills+Portfolio" alt="技能作品集">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <button class="action-btn" onclick="openProjectModal('skills')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="action-btn" onclick="window.open('#', '_blank')">
+                                    <i class="fab fa-github"></i>
+                                </button>
+                                <button class="action-btn" onclick="window.open('#', '_blank')">
+                                    <i class="fas fa-code"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>技術技能作品集</h3>
+                        <p>展示HTML/CSS、JavaScript、Python、SQL等技術能力，以及UI/UX設計與版本控制經驗</p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Git/GitHub</span>
+                            <span class="tech-tag">Figma</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 證書與成就區域 -->
+    <section id="achievements" class="section achievements-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">證書與成就</h2>
+
+            <!-- 證書展示 -->
+            <div class="achievements-content">
+                <div class="achievement-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="category-title">
+                        <i class="fas fa-certificate"></i>
+                        技術證書
+                    </h3>
+                    <div class="certificate-grid">
+                        <!-- 橫向證書 -->
+                        <div class="certificate-item landscape clickable-cert"
+                            onclick="openCertificateModal('react-native')">
+                            <div class="certificate-image">
+                                <img src="images/certificates/react-native-cert.jpg" alt="React Native 證書"
+                                    onerror="this.src='https://via.placeholder.com/400x280/667eea/ffffff?text=React+Native+Certificate'">
+                                <div class="cert-zoom-indicator">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                            <div class="certificate-info">
+                                <h4>React Native 開發認證</h4>
+                                <p>專業行動應用開發技能認證</p>
+                                <span class="cert-date">2024年6月</span>
+                            </div>
+                        </div>
+
+                        <!-- 直向證書 -->
+                        <div class="certificate-item portrait clickable-cert"
+                            onclick="openCertificateModal('firebase')">
+                            <div class="certificate-image">
+                                <img src="images/certificates/firebase-cert.jpg" alt="Firebase 證書"
+                                    onerror="this.src='https://via.placeholder.com/280x400/FFA726/ffffff?text=Firebase+Certificate'">
+                                <div class="cert-zoom-indicator">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                            <div class="certificate-info">
+                                <h4>Firebase 後端服務認證</h4>
+                                <p>雲端資料庫與後端服務專業認證</p>
+                                <span class="cert-date">2024年5月</span>
+                            </div>
+                        </div>
+
+                        <!-- 橫向證書 -->
+                        <div class="certificate-item landscape clickable-cert" onclick="openCertificateModal('ui-ux')">
+                            <div class="certificate-image">
+                                <img src="images/certificates/ui-ux-cert.jpg" alt="UI/UX 證書"
+                                    onerror="this.src='https://via.placeholder.com/400x280/E91E63/ffffff?text=UI/UX+Certificate'">
+                                <div class="cert-zoom-indicator">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                            <div class="certificate-info">
+                                <h4>UI/UX 設計認證</h4>
+                                <p>使用者介面與體驗設計專業認證</p>
+                                <span class="cert-date">2024年4月</span>
+                            </div>
+                        </div>
+
+                        <!-- 直向證書 -->
+                        <div class="certificate-item portrait clickable-cert"
+                            onclick="openCertificateModal('leadership')">
+                            <div class="certificate-image">
+                                <img src="images/certificates/leadership-cert.jpg" alt="領導力證書"
+                                    onerror="this.src='https://via.placeholder.com/280x400/9C27B0/ffffff?text=Leadership+Certificate'">
+                                <div class="cert-zoom-indicator">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                            <div class="certificate-info">
+                                <h4>學生領導力認證</h4>
+                                <p>學生自治與組織領導能力認證</p>
+                                <span class="cert-date">2024年3月</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="achievement-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="category-title">
+                        <i class="fas fa-trophy"></i>
+                        學術成績與獎項
+                    </h3>
+                    <div class="grades-achievements">
+                        <div class="grade-item">
+                            <div class="grade-header">
+                                <h4>國立中山大學</h4>
+                                <span class="grade-period">2022 - 現在</span>
+                            </div>
+                            <div class="grade-details">
+                                <div class="gpa-info">
+                                    <div class="gpa-item">
+                                        <span class="gpa-label">總平均GPA</span>
+                                        <span class="gpa-value">4.06/4.3</span>
+                                    </div>
+                                    <div class="gpa-item">
+                                        <span class="gpa-label">系排名</span>
+                                        <span class="gpa-value">4/44 (9.09%)</span>
+                                    </div>
+                                </div>
+                                <div class="academic-honors">
+                                    <span class="honor-badge">111學年下學期書香獎</span>
+                                    <span class="honor-badge">112學年下學期書香獎</span>
+                                    <span class="honor-badge">113學年下學期書香獎</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="achievement-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="category-title">
+                        <i class="fas fa-award"></i>
+                        領導與服務成就
+                    </h3>
+                    <div class="leadership-achievements">
+                        <div class="leadership-item clickable" onclick="openLeadershipModal('student-council')">
+                            <div class="leadership-icon">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+                            <div class="leadership-content">
+                                <h4>第十八屆學生議會副議長</h4>
+                                <p>領導學生自治團隊，推動校園民主參與，成功組織多場重要議事活動</p>
+                                <div class="leadership-stats">
+                                    <span class="stat">主持會議 20+ 場</span>
+                                    <span class="stat">提案通過率 90%</span>
+                                </div>
+                            </div>
+                            <div class="click-indicator">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+
+                        <div class="leadership-item clickable" onclick="openLeadershipModal('activity-minister')">
+                            <div class="leadership-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="leadership-content">
+                                <h4>學生會活動部部長</h4>
+                                <p>成功規劃並執行大型校園活動，吸引超過800人參與，獲得師生一致好評</p>
+                                <div class="leadership-stats">
+                                    <span class="stat">參與人數 800+</span>
+                                    <span class="stat">滿意度 95%</span>
+                                </div>
+                            </div>
+                            <div class="click-indicator">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+
+                        <div class="leadership-item">
+                            <div class="leadership-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="leadership-content">
+                                <h4>心理健康推廣活動</h4>
+                                <p>推動校園心理健康議題，促進正向對話與關懷氛圍，建立支持網絡</p>
+                                <div class="leadership-stats">
+                                    <span class="stat">活動場次 15+</span>
+                                    <span class="stat">受益學生 500+</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="leadership-item">
+                            <div class="leadership-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="leadership-content">
+                                <h4>創業競賽與獲獎紀錄</h4>
+                                <p>中山永續金融科技榮獲第五屆「2035青年人生活情境競賽」總決賽佳作獎、第20屆中山大學貨櫃團隊期末審查最佳進步獎，並入圍2025永續高雄青年創業挑戰賽初賽</p>
+                                <div class="leadership-stats">
+                                    <span class="stat">競賽獎項 3+</span>
+                                    <span class="stat">創業團隊共同創辦人</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="leadership-item">
+                            <div class="leadership-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="leadership-content">
+                                <h4>進駐高雄金融科技創新園區</h4>
+                                <p>獲選進駐高雄金融科技創新園區，與國泰、中信、KPMG等單位合作，推動綠色金融科技創新。受邀參加2024年12月30日高雄金融科技創新園區Open
+                                    House交流茶會及2025香港科技園路演</p>
+                                <div class="leadership-stats">
+                                    <span class="stat">產學合作單位 5+</span>
+                                    <span class="stat">國際路演機會</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 聯絡區域 -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">聯絡我</h2>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>elson921121@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>0988-111203</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <h3>GitHub</h3>
+                            <p>https://github.com/elsonyeh</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-university"></i>
+                        <div>
+                            <h3>學校</h3>
+                            <p>國立中山大學</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form" data-aos="fade-left">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="您的Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="留言內容" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> 發送訊息
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 專案詳細彈出視窗 -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="project-details">
+                    <h2 id="modalTitle">專案標題</h2>
+                    <div class="project-media">
+                        <div class="project-images">
+                            <img id="modalImage" src="" alt="專案截圖">
+                        </div>
+                        <div class="project-video">
+                            <iframe id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <p id="modalDescription">專案描述</p>
+                        <div class="project-links">
+                            <a href="#" class="btn-primary" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> 查看Demo
+                            </a>
+                            <a href="#" class="btn-secondary" target="_blank">
+                                <i class="fab fa-github"></i> 源碼
+                            </a>
+                            <a href="#" class="btn-secondary" target="_blank">
+                                <i class="fas fa-presentation"></i> 簡報
+                            </a>
+                        </div>
+                        <div class="project-tech-details">
+                            <h3>使用技術</h3>
+                            <div id="modalTech" class="tech-tags"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 活動領導經歷詳細彈窗 -->
+    <div class="modal" id="leadershipModal">
+        <div class="modal-content leadership-modal-content">
+            <span class="close-modal" onclick="closeLeadershipModal()">&times;</span>
+            <div class="modal-body">
+                <div class="leadership-details">
+                    <h2 id="leadershipModalTitle">領導經歷詳情</h2>
+
+                    <!-- 經歷概述 -->
+                    <div class="leadership-overview">
+                        <div class="leadership-period" id="leadershipPeriod">任期時間</div>
+                        <div class="leadership-position" id="leadershipPosition">職位</div>
+                        <p class="leadership-description" id="leadershipDescription">詳細描述</p>
+                    </div>
+
+                    <!-- 主要活動與專案 -->
+                    <div class="leadership-projects">
+                        <h3 class="section-subtitle">
+                            <i class="fas fa-tasks"></i>
+                            主要活動與專案
+                        </h3>
+                        <div class="projects-grid" id="leadershipProjectsGrid">
+                            <!-- 動態生成活動內容 -->
+                        </div>
+                    </div>
+
+                    <!-- 成就統計 -->
+                    <div class="leadership-achievements-stats">
+                        <h3 class="section-subtitle">
+                            <i class="fas fa-chart-bar"></i>
+                            成就統計
+                        </h3>
+                        <div class="achievements-stats-grid" id="leadershipStatsGrid">
+                            <!-- 動態生成統計內容 -->
+                        </div>
+                    </div>
+
+                    <!-- 重要技能與收穫 -->
+                    <div class="leadership-skills-gained">
+                        <h3 class="section-subtitle">
+                            <i class="fas fa-graduation-cap"></i>
+                            獲得技能與收穫
+                        </h3>
+                        <div class="skills-gained-grid" id="leadershipSkillsGrid">
+                            <!-- 動態生成技能內容 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 證書放大彈窗 -->
+    <div class="modal" id="certificateModal">
+        <div class="modal-content certificate-modal-content">
+            <span class="close-modal" onclick="closeCertificateModal()">&times;</span>
+            <div class="certificate-modal-body">
+                <div class="certificate-display">
+                    <img id="certificateModalImage" src="" alt="證書詳細圖片">
+                    <div class="certificate-info-overlay">
+                        <h3 id="certificateModalTitle">證書標題</h3>
+                        <p id="certificateModalDescription">證書描述</p>
+                        <div id="certificateModalDate" class="certificate-date-display">發證日期</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 經歷詳情彈窗 -->
+    <div class="modal" id="timelineModal">
+        <div class="modal-content timeline-modal-content">
+            <span class="close-modal" onclick="closeTimelineModal()">&times;</span>
+            <div class="modal-body">
+                <div class="timeline-details">
+                    <h2 id="timelineModalTitle">經歷詳情</h2>
+
+                    <!-- 經歷概述 -->
+                    <div class="timeline-overview">
+                        <div class="timeline-period" id="timelinePeriod">時間</div>
+                        <div class="timeline-position" id="timelinePosition">職位/角色</div>
+                        <p class="timeline-description" id="timelineDescription">詳細描述</p>
+                    </div>
+
+                    <!-- 活動/專案卡片 -->
+                    <div class="timeline-activities">
+                        <h3 class="section-subtitle">
+                            <i class="fas fa-tasks"></i>
+                            主要活動與成果
+                        </h3>
+                        <div class="activities-grid" id="timelineActivitiesGrid">
+                            <!-- 動態生成活動卡片 -->
+                        </div>
+                    </div>
+
+                    <!-- 相關證書與文件 -->
+                    <div class="timeline-certificates">
+                        <h3 class="section-subtitle">
+                            <i class="fas fa-certificate"></i>
+                            相關證書與文件
+                        </h3>
+                        <div class="certificates-grid" id="timelineCertificatesGrid">
+                            <!-- 動態生成證書卡片 -->
+                        </div>
+                    </div>
+
+                    <!-- 相關照片 -->
+                    <div class="timeline-photos">
+                        <h3 class="section-subtitle">
+                            <i class="fas fa-images"></i>
+                            活動照片
+                        </h3>
+                        <div class="photos-gallery" id="timelinePhotosGallery">
+                            <!-- 動態生成照片圖庫 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁尾 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 個人作品集. 國立中山大學 人文暨科技跨領域學士學位學程</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
