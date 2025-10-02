@@ -427,7 +427,7 @@ function initProjectModals() {
         tastebuddies: {
             title: 'TasteBuddies 美食推薦App',
             description: '負責「TasteBuddies」WEB App的程式設計與前端開發，從前端介面設計規劃、使用者體驗優化到後端API串接，皆由我負責。此專案使用React Native + Supabase架構實現推薦制度與即時互動功能，並採用敏捷式開發，注重使用者體驗與技術整合。這個App致力於解決「不知道吃什麼」的選擇困難，幫助使用者提升日常用餐效率。',
-            image: 'https://via.placeholder.com/600x400/667eea/ffffff?text=TasteBuddies+App',
+            image: 'images/projects/tastebuddies-cover.jpg',
             video: 'https://www.youtube.com/embed/lnz3dtOpI50',
             tech: ['React Native', 'Supabase', 'UI/UX設計', '敏捷開發', 'Node.js', '即時互動'],
             demoLink: 'https://senior-project-ruby.vercel.app/',
