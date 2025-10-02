@@ -454,16 +454,6 @@ function initProjectModals() {
             codeLink: '#',
             presentationLink: '#'
         },
-        skills: {
-            title: '技術技能作品集',
-            description: '展示我在程式開發領域的技術技能，包括前端開發（HTML/CSS、JavaScript）、後端開發（Python、SQL）、行動應用開發（React Native）、資料庫管理（Firebase、PostgreSQL）、版本控制（Git/GitHub）以及UI/UX設計（Figma）等多項專業技能。採用敏捷開發方法論，注重程式碼品質與使用者體驗。',
-            image: 'https://via.placeholder.com/600x400/9C27B0/ffffff?text=Skills+Portfolio',
-            video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-            tech: ['HTML/CSS', 'JavaScript', 'Python', 'SQL', 'React Native', 'Firebase', 'Git/GitHub', 'Figma'],
-            demoLink: '#',
-            codeLink: '#',
-            presentationLink: '#'
-        },
         greenup: {
             title: 'GREENUP! 永續測驗平台',
             description: '負責開發「GREENUP! 永續基礎發展能力測驗練習平台」，這是一個互動式線上學習平台，旨在提升使用者的ESG知識與永續素養。平台提供模擬測驗、即時回饋與學習分析功能，幫助使用者系統性地掌握永續發展相關概念。此專案為中山永續金融科技團隊的重要教育推廣工具，結合永續教育與數位科技，促進永續意識的普及化。',
@@ -471,6 +461,16 @@ function initProjectModals() {
             video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
             tech: ['React', 'Next.js', 'ESG教育', '線上測驗', 'UI/UX設計', 'Vercel部署'],
             demoLink: 'https://greenup-sustainability-exam-platfor-three.vercel.app/',
+            codeLink: '#',
+            presentationLink: '#'
+        },
+        eatmove: {
+            title: 'EatMove 線上訂餐外送平台',
+            description: '期末專案製作「EatMove」線上訂餐外送平台，整合用戶、餐廳與外送員三方角色，提供從訂餐到配送的完整服務。透過本平台，我們成功實現用戶線上瀏覽餐廳與菜單、加入購物車、提交訂單、完成訂單後評分；餐廳即時接單、準備餐點、交付餐點；外送員取餐配送等完整流程。整體系統功能齊全、操作流程順暢，並創新性地加入了人臉辨識登入與AI以圖搜餐的進階功能。我在本專案內負責前期需求分析、ER-model與Schema部分繪製、大部分資料庫建構與前端串接的功能，以及兩大進階功能之建構。',
+            image: 'https://via.placeholder.com/600x400/FF5722/ffffff?text=EatMove+Platform',
+            video: 'https://www.youtube.com/embed/mN3CNEsDDeU',
+            tech: ['資料庫管理', 'PostgreSQL', 'ER-Model設計', '人臉辨識', 'AI圖像搜尋', '前後端串接'],
+            demoLink: 'https://youtu.be/mN3CNEsDDeU?si=Kv1Ro20gtZ8X1pYl',
             codeLink: '#',
             presentationLink: '#'
         }
