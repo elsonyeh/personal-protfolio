@@ -13,7 +13,9 @@
       "Bash(git branch:*)",
       "Bash(git push:*)",
       "Bash(git commit -m \"$(cat <<''EOF''\n修復證書彈窗顯示問題並新增Google證書\n\n主要修正:\n- 修復證書彈窗在頁面載入時會一直顯示的問題(移除持久性display:flex)\n- 修復名次證明書旋轉後超出邊框的問題,優化旋轉證書尺寸\n\n新增內容:\n- 新增2025年Google數位行銷學程結業證書\n- 新增2025年Google Cloud學程結業證書\n- 中山大學經歷新增Google數位人才探索計畫活動\n\n技術優化:\n- 證書彈窗改為條件式flex顯示(僅在.show時啟用)\n- 旋轉證書尺寸調整為 max-height: 50vw, max-width: 65vh\n- 證書圖片居中對齊優化\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\n修正名次證明書顯示方式並移除via.placeholder錯誤\n\n主要修正:\n- 修正名次證明書為直向顯示(移除rotate屬性)\n- 移除所有圖片的via.placeholder.com備用網址\n- 移除onerror屬性以避免ERR_NAME_NOT_RESOLVED錯誤\n\n技術優化:\n- 名次證明書改為與100K證書相同的顯示邏輯(僅portrait: true)\n- 移除學生活動照片的placeholder備用網址\n- 移除成就區域證書的placeholder備用網址\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit -m \"$(cat <<''EOF''\n將Google證書移至成就區域並清理範例證書\n\n主要修改:\n- 將Google數位行銷與Google Cloud證書移至「證書與成就」區域\n- 刪除不存在的範例證書(React Native、Firebase、UI/UX、Leadership)\n- 移除console.log除錯訊息,清理控制台輸出\n\n優化內容:\n- 成就區域現在只顯示實際存在的Google證書\n- 避免404錯誤(leadership-cert.jpg等不存在的檔案)\n- 清理不必要的控制台輸出\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []

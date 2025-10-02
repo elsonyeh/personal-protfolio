@@ -720,7 +720,6 @@ function updateCoursesStats(filter) {
     });
 
     // 可以在這裡更新顯示的統計數字
-    console.log(`顯示課程: ${visibleCourses}, 總學分: ${totalCredits}`);
 }
 
 // 統計動畫（修課歷程統計）
