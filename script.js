@@ -472,7 +472,7 @@ function initProjectModals() {
             tech: ['資料庫管理', 'PostgreSQL', 'ER-Model設計', '人臉辨識', 'AI圖像搜尋', '前後端串接'],
             demoLink: 'https://youtu.be/mN3CNEsDDeU?si=Kv1Ro20gtZ8X1pYl',
             codeLink: '#',
-            presentationLink: '#'
+            presentationLink: 'documents/presentations/eatmove-presentation.pdf'
         }
     };
 
@@ -516,6 +516,11 @@ function initProjectModals() {
         links[0].href = project.demoLink;
         links[1].href = project.codeLink;
         links[2].href = project.presentationLink;
+
+        // 如果簡報連結是PDF，設定在新分頁開啟
+        if (project.presentationLink.endsWith('.pdf')) {
+            links[2].target = '_blank';
+        }
 
         // 顯示彈窗
         modal.style.display = 'block';
