@@ -517,6 +517,11 @@ function initProjectModals() {
         links[1].href = project.codeLink;
         links[2].href = project.presentationLink;
 
+        // 顯示/隱藏按鈕 - 如果連結是#則隱藏按鈕
+        links[0].style.display = project.demoLink === '#' ? 'none' : 'inline-flex';
+        links[1].style.display = project.codeLink === '#' ? 'none' : 'inline-flex';
+        links[2].style.display = project.presentationLink === '#' ? 'none' : 'inline-flex';
+
         // 如果簡報連結是PDF，設定在新分頁開啟
         if (project.presentationLink.endsWith('.pdf')) {
             links[2].target = '_blank';
