@@ -1133,7 +1133,7 @@ const timelineData = {
             { name: '112學生會幹部當選證明', image: 'images/certificates/student-union-elected-112.jpg' },
             { name: '112學生會幹部聘書', image: 'images/certificates/student-union-appointment-112.jpg' },
             { name: '112社團幹部服務證書', image: 'images/certificates/club-service-112.jpg' },
-            { name: '名次證明書', image: 'images/certificates/rank-certificate.jpg', portrait: true },
+            { name: '名次證明書', image: 'images/certificates/rank-certificate.jpg', portrait: true, rotate: true },
             { name: '2025年Google數位行銷學程結業證書', image: 'images/certificates/google-digital-marketing-cert.jpg' },
             { name: '2025年Google Cloud學程結業證書', image: 'images/certificates/google-cloud-cert.jpg' }
         ]
