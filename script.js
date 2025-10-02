@@ -524,9 +524,9 @@ function initProjectModals() {
         links[2].href = project.presentationLink;
 
         // 顯示/隱藏按鈕 - 如果連結是#則隱藏按鈕
-        links[0].style.display = project.demoLink === '#' ? 'none' : '';
-        links[1].style.display = project.codeLink === '#' ? 'none' : '';
-        links[2].style.display = project.presentationLink === '#' ? 'none' : '';
+        links[0].style.display = project.demoLink === '#' ? 'none' : 'inline-flex';
+        links[1].style.display = project.codeLink === '#' ? 'none' : 'inline-flex';
+        links[2].style.display = project.presentationLink === '#' ? 'none' : 'inline-flex';
 
         console.log('Button 0 display:', links[0].style.display);
         console.log('Button 1 display:', links[1].style.display);
