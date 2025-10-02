@@ -436,11 +436,11 @@ function initProjectModals() {
         },
         aifinsys: {
             title: '中山永續金融科技',
-            description: '作為中山永續金融科技的成員之一，我負責網站建置與ESG研討會規劃、企業推廣，實際參與產學整合與科技應用推動。團隊以AI演算法與風險場景為基礎，協助企業建立永續投資策略，提升風險韌性。未來將會持續增加永續規劃相關服務。',
+            description: '作為中山永續金融科技的成員之一，我負責網站建置與ESG研討會規劃、企業推廣，實際參與產學整合與科技應用推動。團隊以AI演算法與風險場景為基礎，協助企業建立永續投資策略，提升風險韌性。此外，我也負責開發「GREENUP! 永續基礎發展能力測驗練習平台」，提供互動式學習工具，幫助使用者提升ESG知識與永續素養。未來將會持續增加永續規劃相關服務。',
             image: 'https://via.placeholder.com/600x400/4CAF50/ffffff?text=FinTech+ESG',
             video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
             tech: ['ESG', 'FinTech', 'AI演算法', '風險管理', '永續投資', '網站開發'],
-            demoLink: 'https://aifinsys.com',
+            demoLink: 'https://greenup-sustainability-exam-platfor-three.vercel.app/',
             codeLink: '#',
             presentationLink: '#'
         },
@@ -461,6 +461,16 @@ function initProjectModals() {
             video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
             tech: ['HTML/CSS', 'JavaScript', 'Python', 'SQL', 'React Native', 'Firebase', 'Git/GitHub', 'Figma'],
             demoLink: '#',
+            codeLink: '#',
+            presentationLink: '#'
+        },
+        greenup: {
+            title: 'GREENUP! 永續測驗平台',
+            description: '負責開發「GREENUP! 永續基礎發展能力測驗練習平台」，這是一個互動式線上學習平台，旨在提升使用者的ESG知識與永續素養。平台提供模擬測驗、即時回饋與學習分析功能，幫助使用者系統性地掌握永續發展相關概念。此專案為中山永續金融科技團隊的重要教育推廣工具，結合永續教育與數位科技，促進永續意識的普及化。',
+            image: 'https://via.placeholder.com/600x400/4CAF50/ffffff?text=GREENUP+Platform',
+            video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+            tech: ['React', 'Next.js', 'ESG教育', '線上測驗', 'UI/UX設計', 'Vercel部署'],
+            demoLink: 'https://greenup-sustainability-exam-platfor-three.vercel.app/',
             codeLink: '#',
             presentationLink: '#'
         }
