@@ -514,23 +514,9 @@ function initProjectModals() {
         // 更新連結
         const links = modal.querySelectorAll('.project-links a');
 
-        console.log('Project:', projectId);
-        console.log('Demo:', project.demoLink);
-        console.log('Code:', project.codeLink);
-        console.log('Presentation:', project.presentationLink);
-
         links[0].href = project.demoLink;
         links[1].href = project.codeLink;
         links[2].href = project.presentationLink;
-
-        // 顯示/隱藏按鈕 - 如果連結是#則隱藏按鈕
-        links[0].style.display = project.demoLink === '#' ? 'none' : 'inline-flex';
-        links[1].style.display = project.codeLink === '#' ? 'none' : 'inline-flex';
-        links[2].style.display = project.presentationLink === '#' ? 'none' : 'inline-flex';
-
-        console.log('Button 0 display:', links[0].style.display);
-        console.log('Button 1 display:', links[1].style.display);
-        console.log('Button 2 display:', links[2].style.display);
 
         // 如果簡報連結是PDF，設定在新分頁開啟
         if (project.presentationLink && project.presentationLink.endsWith('.pdf')) {
