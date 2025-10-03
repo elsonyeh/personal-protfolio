@@ -328,31 +328,56 @@ function animateCounter(element, target) {
 
 // 聯絡表單
 function initContactForm() {
-    const form = document.querySelector('.contact-form form');
+    const form = document.getElementById('contactForm');
 
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            // 簡單的表單驗證和提交動畫
-            const submitBtn = form.querySelector('.btn-primary');
+            const submitBtn = document.getElementById('submitBtn');
+            const formStatus = document.getElementById('formStatus');
             const originalText = submitBtn.innerHTML;
 
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 發送中...';
+            // 取得表單數據
+            const userName = document.getElementById('userName').value;
+            const userEmail = document.getElementById('userEmail').value;
+            const userMessage = document.getElementById('userMessage').value;
+
+            // 構建郵件內容
+            const subject = encodeURIComponent(`個人網站聯絡表單 - ${userName} 的訊息`);
+            const body = encodeURIComponent(
+                `姓名：${userName}\n` +
+                `Email：${userEmail}\n\n` +
+                `訊息內容：\n${userMessage}\n\n` +
+                `---\n發送時間：${new Date().toLocaleString('zh-TW')}`
+            );
+
+            // 使用 mailto 協議打開郵件客戶端
+            const mailtoLink = `mailto:elson921121@gmail.com?subject=${subject}&body=${body}`;
+
+            // 顯示處理中狀態
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 開啟郵件...';
             submitBtn.disabled = true;
 
-            // 模擬發送
-            setTimeout(() => {
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> 發送成功！';
-                submitBtn.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
+            // 開啟郵件客戶端
+            window.location.href = mailtoLink;
 
+            // 顯示提示訊息
+            setTimeout(() => {
+                formStatus.innerHTML = '<p style="color: #667eea; font-weight: 500;"><i class="fas fa-info-circle"></i> 已為您開啟郵件客戶端，請在郵件應用中發送訊息。</p>';
+                formStatus.style.display = 'block';
+
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> 已開啟郵件';
+                submitBtn.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+
+                // 2秒後恢復按鈕狀態
                 setTimeout(() => {
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
                     submitBtn.style.background = '';
                     form.reset();
-                }, 2000);
-            }, 2000);
+                }, 3000);
+            }, 500);
         });
     }
 }
@@ -427,6 +452,15 @@ function initProjectModals() {
         tastebuddies: {
             title: 'TasteBuddies 美食推薦App',
             description: '負責「TasteBuddies」WEB App的程式設計與前端開發，從前端介面設計規劃、使用者體驗優化到後端API串接，皆由我負責。此專案使用React Native + Supabase架構實現推薦制度與即時互動功能，並採用敏捷式開發，注重使用者體驗與技術整合。這個App致力於解決「不知道吃什麼」的選擇困難，幫助使用者提升日常用餐效率。',
+            features: [
+                'SwiftTaste 單人探索：透過趣味問題與滑動卡片，獲得個人化餐廳推薦。',
+                'Buddies! 群組決策：建立房間，與朋友即時同步回答問題並投票選餐。',
+                '地圖探索：整合 Google Maps，自動定位並顯示推薦與收藏餐廳。',
+                '收藏清單：管理多個自訂的最愛餐廳清單，並可顯示於地圖上。',
+                '使用者個人檔案：查看收藏清單、評論統計，並編輯個人資訊。',
+                '社交互動：支援即時群組決策、房間連結與 QR Code 分享。',
+                '管理員後台：整合餐廳資料、標籤與地點管理，並提供用戶互動與數據分析功能，確保平台內容更新與系統優化。'
+            ],
             image: 'images/projects/tastebuddies-cover.jpg',
             video: 'https://www.youtube.com/embed/lnz3dtOpI50',
             tech: ['React Native', 'Supabase', 'UI/UX設計', '敏捷開發', 'Node.js', '即時互動'],
@@ -437,7 +471,7 @@ function initProjectModals() {
         aifinsys: {
             title: '中山永續金融科技',
             description: '作為中山永續金融科技的成員之一，我負責網站建置與ESG研討會規劃、企業推廣，實際參與產學整合與科技應用推動。團隊以AI演算法與風險場景為基礎，協助企業建立永續投資策略，提升風險韌性。此外，我也負責開發「GREENUP! 永續基礎發展能力測驗練習平台」，提供互動式學習工具，幫助使用者提升ESG知識與永續素養。未來將會持續增加永續規劃相關服務。',
-            image: 'https://via.placeholder.com/600x400/4CAF50/ffffff?text=FinTech+ESG',
+            image: 'images/projects/aifinsys-cover.png',
             video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
             tech: ['ESG', 'FinTech', 'AI演算法', '風險管理', '永續投資', '網站開發'],
             demoLink: 'https://greenup-sustainability-exam-platfor-three.vercel.app/',
@@ -457,6 +491,13 @@ function initProjectModals() {
         greenup: {
             title: 'GREENUP! 永續測驗平台',
             description: '負責開發「GREENUP! 永續基礎發展能力測驗練習平台」，這是一個互動式線上學習平台，旨在提升使用者的ESG知識與永續素養。平台提供模擬測驗、即時回饋與學習分析功能，幫助使用者系統性地掌握永續發展相關概念。此專案為中山永續金融科技團隊的重要教育推廣工具，結合永續教育與數位科技，促進永續意識的普及化。',
+            features: [
+                '📚 題庫管理：PDF 自動解析與 OCR 文字識別、AI 自動生成詳細解答說明、管理員審核與編輯功能、主題分類管理(環境、社會、經濟、治理永續)',
+                '🎯 練習功能：智慧練習推薦系統、多種練習模式(隨機、主題、錯題、收藏)、即時反饋與詳細解析、完整答題進度追蹤',
+                '📊 數據分析：個人學習進度與成績分析、Recharts 視覺化圖表呈現、錯題分析與改進建議、學習目標設定與追蹤',
+                '🏆 社交功能：每日/每週/每月排行榜、成就徽章系統、題目收藏與個人題庫',
+                '👨‍💼 管理後台：用戶管理與權限控制、完整題庫管理功能、平台數據監控分析、系統配置與參數調整'
+            ],
             image: 'https://via.placeholder.com/600x400/4CAF50/ffffff?text=GREENUP+Platform',
             video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
             tech: ['React', 'Next.js', 'ESG教育', '線上測驗', 'UI/UX設計', 'Vercel部署'],
@@ -467,7 +508,15 @@ function initProjectModals() {
         eatmove: {
             title: 'EatMove 線上訂餐外送平台',
             description: '期末專案製作「EatMove」線上訂餐外送平台，整合用戶、餐廳與外送員三方角色，提供從訂餐到配送的完整服務。透過本平台，我們成功實現用戶線上瀏覽餐廳與菜單、加入購物車、提交訂單、完成訂單後評分；餐廳即時接單、準備餐點、交付餐點；外送員取餐配送等完整流程。整體系統功能齊全、操作流程順暢，並創新性地加入了人臉辨識登入與AI以圖搜餐的進階功能。我在本專案內負責前期需求分析、ER-model與Schema部分繪製、大部分資料庫建構與前端串接的功能，以及兩大進階功能之建構。',
-            image: 'https://via.placeholder.com/600x400/FF5722/ffffff?text=EatMove+Platform',
+            features: [
+                '👤 用戶端功能：線上瀏覽餐廳與菜單、加入購物車、提交訂單、用戶資料修改、我的最愛餐廳收藏、近期瀏覽記錄、搜尋與定位功能',
+                '🚴 外送員端功能：註冊與人臉辨識登入、查看待配送訂單並接單、即時路線資訊顯示、外送員資料與工作狀態管理',
+                '🏪 店家端功能：新增/刪除/修改商品、即時訂單管理與狀態更新、餐廳基本資訊與營業狀態修改',
+                '🤖 AI人臉辨識登入：使用 face-api.js 擷取臉部特徵向量、雙重驗證機制(歐氏距離 + 餘弦相似度)、提升資訊安全性與登入便利性',
+                '📸 AI以圖搜餐功能：上傳食物照片進行影像分析、自動判斷菜色類型並推薦相似餐廳、完全本地運算保護隱私',
+                '⭐ 雙向評價機制：用戶可對餐點與外送員分開評分、建立信任機制促進服務品質提升、平均評分統計與展示'
+            ],
+            image: 'images/projects/eatmove-cover.jpg',
             video: 'https://www.youtube.com/embed/mN3CNEsDDeU',
             tech: ['資料庫管理', 'PostgreSQL', 'ER-Model設計', '人臉辨識', 'AI圖像搜尋', '前後端串接'],
             demoLink: 'https://youtu.be/mN3CNEsDDeU?si=Kv1Ro20gtZ8X1pYl',
@@ -498,8 +547,39 @@ function initProjectModals() {
         // 填入數據
         document.getElementById('modalTitle').textContent = project.title;
         document.getElementById('modalDescription').textContent = project.description;
-        document.getElementById('modalImage').src = project.image;
-        document.getElementById('modalVideo').src = project.video;
+
+        // 影片區域顯示/隱藏
+        const videoContainer = document.getElementById('projectVideoContainer');
+        const videoIframe = document.getElementById('modalVideo');
+
+        if (projectId === 'greenup' || projectId === 'aifinsys') {
+            // GREENUP 和中山永續金融科技不顯示影片
+            videoContainer.style.display = 'none';
+            videoIframe.src = '';
+        } else if (project.video) {
+            // 其他有影片的專案顯示影片
+            videoContainer.style.display = 'block';
+            videoIframe.src = project.video;
+        } else {
+            videoContainer.style.display = 'none';
+            videoIframe.src = '';
+        }
+
+        // 主要功能區域
+        const featuresSection = document.getElementById('modalFeatures');
+        const featuresList = document.getElementById('modalFeaturesList');
+
+        if (project.features && project.features.length > 0) {
+            featuresSection.style.display = 'block';
+            featuresList.innerHTML = '';
+            project.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+        } else {
+            featuresSection.style.display = 'none';
+        }
 
         // 技術標籤
         const techContainer = document.getElementById('modalTech');
@@ -512,15 +592,54 @@ function initProjectModals() {
         });
 
         // 更新連結
-        const links = modal.querySelectorAll('.project-links a');
+        const linksContainer = modal.querySelector('.project-links');
 
-        links[0].href = project.demoLink;
-        links[1].href = project.codeLink;
-        links[2].href = project.presentationLink;
+        // 根據不同專案自訂按鈕文字和功能
+        if (projectId === 'eatmove') {
+            // EatMove 專案：查看Demo + 查看介紹
+            linksContainer.innerHTML = `
+                <a href="${project.demoLink}" class="btn-primary" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> 查看Demo
+                </a>
+                <a href="javascript:void(0)" class="btn-primary" onclick="viewPDF('${project.presentationLink}', '${project.title}')">
+                    <i class="fas fa-file-pdf"></i> 查看介紹
+                </a>
+                <a href="${project.codeLink}" class="btn-secondary" target="_blank">
+                    <i class="fab fa-github"></i> 源碼
+                </a>
+                <a href="javascript:void(0)" class="btn-secondary" onclick="viewPDF('${project.presentationLink}', '${project.title}')">
+                    <i class="fas fa-presentation"></i> 簡報
+                </a>
+            `;
+        } else if (projectId === 'tastebuddies' || projectId === 'greenup' || projectId === 'aifinsys') {
+            // TasteBuddies, GREENUP, 中山永續金融科技：查看網站
+            const links = linksContainer.querySelectorAll('a');
+            links[0].href = project.demoLink;
+            links[0].innerHTML = '<i class="fas fa-globe"></i> 查看網站';
+            links[1].href = project.codeLink;
 
-        // 如果簡報連結是PDF，設定在新分頁開啟
-        if (project.presentationLink && project.presentationLink.endsWith('.pdf')) {
-            links[2].target = '_blank';
+            // 如果簡報連結是PDF，改為點擊彈窗檢視，而非直接下載
+            if (project.presentationLink && project.presentationLink.endsWith('.pdf')) {
+                links[2].href = 'javascript:void(0)';
+                links[2].onclick = () => viewPDF(project.presentationLink, project.title);
+            } else {
+                links[2].href = project.presentationLink;
+                links[2].target = '_blank';
+            }
+        } else {
+            // 其他專案使用原本的三個按鈕
+            const links = linksContainer.querySelectorAll('a');
+            links[0].href = project.demoLink;
+            links[1].href = project.codeLink;
+
+            // 如果簡報連結是PDF，改為點擊彈窗檢視，而非直接下載
+            if (project.presentationLink && project.presentationLink.endsWith('.pdf')) {
+                links[2].href = 'javascript:void(0)';
+                links[2].onclick = () => viewPDF(project.presentationLink, project.title);
+            } else {
+                links[2].href = project.presentationLink;
+                links[2].target = '_blank';
+            }
         }
 
         // 顯示彈窗
@@ -1173,7 +1292,7 @@ const timelineData = {
             {
                 group: [
                     { src: 'images/aifinsys/fintech-hub.png', caption: '進駐金融科技園區' },
-                    { src: 'images/aifinsys/tea-party.jpg', caption: '進駐科技園區茶會' }
+                    { src: 'images/aifinsys/tea-party.jpg', caption: '高雄金融科技創新園區 Open House 交流茶會' }
                 ],
                 caption: '進駐金融科技園區'
             },
@@ -1188,6 +1307,8 @@ const timelineData = {
         activities: [
             { name: 'APP功能開發', description: 'SwiftTaste單人探索、Buddies!群組決策、地圖探索等功能', tech: 'React Native + Supabase', link: 'https://senior-project-ruby.vercel.app/' },
             { name: '配對演算法設計', description: '開發餐廳推薦配對演算法，整合個人與群組偏好', tech: 'Algorithm Design' },
+            { name: '2025鹽夏不夜埕地方創生', description: '參與《鹽夏不夜埕-鹽來遮好呷》地方創生活動，運用自行蒐集及製作的鹽埕地區美食資料庫進行美食推薦，該推薦系統置於活動LINE官方帳號網頁中供消費者使用', tech: 'TasteBuddies + LINE平台', participants: '150人使用' },
+            { name: '2025鹽埕奶茶節數據分析', description: '參與《鹽埕奶茶節》地方創生活動，針對參與奶茶節的餐廳及飲料店提供消費者美食推薦，並於TasteBuddies後台進行流量數據分析與成效評估', tech: '數據分析 + 後台系統', role: '技術支援與數據分析' },
             { name: '專題Demo影片', description: 'TasteBuddies APP功能展示影片', video: 'https://youtube.com/shorts/lnz3dtOpI50' },
             { name: '中原大學100K創業競賽', description: '參加創新創業募資競賽', status: '已參賽' },
             { name: 'Design For Taiwan', description: '第十屆社會創新挑戰賽', status: '進入複賽' }
@@ -1196,7 +1317,6 @@ const timelineData = {
             { name: '100K創業競賽參賽證明', image: 'images/certificates/100k-cert.jpg', portrait: true }
         ],
         photos: [
-            { src: 'images/tastebuddies/app-demo.jpg', caption: 'APP介面展示' },
             { src: 'images/tastebuddies/team-work.jpg', caption: '團隊開發過程' }
         ]
     },
@@ -1530,6 +1650,32 @@ function closeCertificateModal() {
         <p id="certificateModalDate"></p>
     `;
 }
+
+// 查看 PDF 簡報
+function viewPDF(pdfUrl, title) {
+    const modal = document.getElementById('certificateModal');
+    const modalContent = modal.querySelector('.certificate-modal-content');
+
+    // 重建modal內容為PDF檢視器
+    modalContent.innerHTML = `
+        <span class="close-modal" onclick="closeCertificateModal()">&times;</span>
+        <h2 style="color: white; margin-bottom: 20px;">${title} - 簡報</h2>
+        <div class="pdf-viewer-container">
+            <iframe src="${pdfUrl}" style="width: 100%; height: 80vh; border: none; border-radius: 8px;"></iframe>
+        </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <a href="${pdfUrl}" download class="btn-primary" style="display: inline-block; padding: 10px 20px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-decoration: none; border-radius: 5px;">
+                <i class="fas fa-download"></i> 下載簡報
+            </a>
+        </div>
+    `;
+
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+// 全局函數
+window.viewPDF = viewPDF;
 
 // 全局函數
 window.viewPhoto = viewPhoto;

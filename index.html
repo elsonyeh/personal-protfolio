@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人作品集 - 國立中山大學</title>
+    <title>個人作品集 - Elson Yeh</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link
@@ -28,7 +28,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-text">&lt;Portfolio/&gt;</span>
+                <span class="logo-text">&lt;Elson Yeh's Portfolio/&gt;</span>
             </div>
             <div class="nav-menu">
                 <div class="nav-item"><a href="#home">首頁</a></div>
@@ -1110,7 +1110,7 @@
                 <!-- 中山永續金融科技 -->
                 <div class="portfolio-item fintech" data-aos="fade-up" data-aos-delay="300" onclick="openProjectModal('aifinsys')">
                     <div class="portfolio-image">
-                        <img src="https://via.placeholder.com/400x250/4CAF50/ffffff?text=FinTech+ESG" alt="永續金融科技">
+                        <img src="images/projects/aifinsys-cover.png" alt="永續金融科技">
                     </div>
                     <div class="portfolio-content">
                         <h3>中山永續金融科技</h3>
@@ -1144,7 +1144,20 @@
                 <!-- EatMove 線上訂餐外送平台 -->
                 <div class="portfolio-item mobile" data-aos="fade-up" data-aos-delay="400" onclick="openProjectModal('eatmove')">
                     <div class="portfolio-image">
-                        <img src="https://via.placeholder.com/400x250/FF5722/ffffff?text=EatMove+Platform" alt="EatMove訂餐平台">
+                        <img src="images/projects/eatmove-cover.jpg" alt="EatMove訂餐平台">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <button class="action-btn" onclick="event.stopPropagation(); openProjectModal('eatmove')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="action-btn" onclick="event.stopPropagation(); window.open('https://youtu.be/mN3CNEsDDeU?si=Kv1Ro20gtZ8X1pYl', '_blank')">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <button class="action-btn" onclick="event.stopPropagation(); viewPDF('documents/presentations/eatmove-presentation.pdf', 'EatMove 線上訂餐外送平台')">
+                                    <i class="fas fa-file-pdf"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     <div class="portfolio-content">
                         <h3>EatMove 線上訂餐外送平台</h3>
@@ -1213,37 +1226,6 @@
                     </div>
                 </div>
 
-                <!-- 技能展示專案 -->
-                <div class="portfolio-item mobile" data-aos="fade-up" data-aos-delay="500">
-                    <div class="portfolio-image">
-                        <img src="https://via.placeholder.com/400x250/9C27B0/ffffff?text=Skills+Portfolio" alt="技能作品集">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-actions">
-                                <button class="action-btn" onclick="openProjectModal('skills')">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                                <button class="action-btn" onclick="window.open('#', '_blank')">
-                                    <i class="fab fa-github"></i>
-                                </button>
-                                <button class="action-btn" onclick="window.open('#', '_blank')">
-                                    <i class="fas fa-code"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>技術技能作品集</h3>
-                        <p>展示HTML/CSS、JavaScript、Python、SQL等技術能力，以及UI/UX設計與版本控制經驗</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">HTML/CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">Git/GitHub</span>
-                            <span class="tech-tag">Figma</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1452,19 +1434,20 @@
                     </div>
                 </div>
                 <div class="contact-form" data-aos="fade-left">
-                    <form>
+                    <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" placeholder="您的姓名" required>
+                            <input type="text" name="from_name" id="userName" placeholder="您的姓名" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="您的Email" required>
+                            <input type="email" name="from_email" id="userEmail" placeholder="您的Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="留言內容" rows="5" required></textarea>
+                            <textarea name="message" id="userMessage" placeholder="留言內容" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn-primary">
+                        <button type="submit" class="btn-primary" id="submitBtn">
                             <i class="fas fa-paper-plane"></i> 發送訊息
                         </button>
+                        <div id="formStatus" style="margin-top: 15px; text-align: center; display: none;"></div>
                     </form>
                 </div>
             </div>
@@ -1478,16 +1461,21 @@
             <div class="modal-body">
                 <div class="project-details">
                     <h2 id="modalTitle">專案標題</h2>
-                    <div class="project-media">
-                        <div class="project-images">
-                            <img id="modalImage" src="" alt="專案截圖">
-                        </div>
-                        <div class="project-video">
-                            <iframe id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
-                        </div>
+
+                    <!-- 影片區域 -->
+                    <div class="project-video" id="projectVideoContainer">
+                        <iframe id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
                     </div>
+
                     <div class="project-info">
                         <p id="modalDescription">專案描述</p>
+
+                        <!-- 主要功能區域 -->
+                        <div id="modalFeatures" class="project-features" style="display: none;">
+                            <h3>主要功能</h3>
+                            <ul id="modalFeaturesList" class="features-list"></ul>
+                        </div>
+
                         <div class="project-links">
                             <a href="#" class="btn-primary" target="_blank">
                                 <i class="fas fa-external-link-alt"></i> 查看Demo
