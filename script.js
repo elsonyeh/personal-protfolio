@@ -1296,41 +1296,13 @@ function openTimelineModal(experienceId) {
 
                 // 檢查是否為群組照片
                 if (photo.group && photo.group.length > 0) {
-                    // 建立carousel容器
-                    const carouselId = `carousel-${index}`;
-                    let carouselHTML = `
-                        <div class="photo-carousel" id="${carouselId}">
-                            <div class="carousel-track">
-                    `;
-
-                    photo.group.forEach((img, imgIndex) => {
-                        carouselHTML += `
-                            <div class="carousel-slide ${imgIndex === 0 ? 'active' : ''}">
-                                <img src="${img.src}" alt="${img.caption}" onclick="viewPhoto('${img.src}', '${img.caption}')">
-                                <p class="carousel-caption">${img.caption}</p>
-                            </div>
-                        `;
-                    });
-
-                    carouselHTML += `
-                            </div>
-                            ${photo.group.length > 1 ? `
-                                <button class="carousel-btn prev" onclick="moveCarousel('${carouselId}', -1)">‹</button>
-                                <button class="carousel-btn next" onclick="moveCarousel('${carouselId}', 1)">›</button>
-                                <div class="carousel-indicators">
-                                    ${photo.group.map((_, i) => `<span class="dot ${i === 0 ? 'active' : ''}" onclick="jumpToSlide('${carouselId}', ${i})"></span>`).join('')}
-                                </div>
-                            ` : ''}
-                        </div>
+                    // 在gallery只顯示第一張照片,點擊後打開carousel
+                    const firstPhoto = photo.group[0];
+                    const groupJson = JSON.stringify(photo.group).replace(/"/g, '&quot;');
+                    photoCard.innerHTML = `
+                        <img src="${firstPhoto.src}" alt="${photo.caption}" onclick="viewPhotoGroup('${groupJson}', 0)">
                         <p>${photo.caption}</p>
                     `;
-
-                    photoCard.innerHTML = carouselHTML;
-
-                    // 啟動自動輪播
-                    if (photo.group.length > 1) {
-                        setTimeout(() => startAutoCarousel(carouselId, 3000), 100);
-                    }
                 } else {
                     // 單張照片
                     photoCard.innerHTML = `
@@ -1503,6 +1475,66 @@ function viewPhoto(imageSrc, caption) {
     };
     img.src = imageSrc;
 }
+
+// 查看照片群組(帶carousel)
+function viewPhotoGroup(groupJson, startIndex = 0) {
+    const photos = JSON.parse(groupJson.replace(/&quot;/g, '"'));
+    const modal = document.getElementById('certificateModal');
+    const modalContent = modal.querySelector('.certificate-modal-content');
+
+    // 清空並重建modal內容為carousel
+    modalContent.innerHTML = `
+        <span class="close-modal" onclick="closeCertificateModal()">&times;</span>
+        <div class="photo-group-carousel" id="photoGroupCarousel">
+            <div class="carousel-track">
+                ${photos.map((photo, index) => `
+                    <div class="carousel-slide ${index === startIndex ? 'active' : ''}">
+                        <img src="${photo.src}" alt="${photo.caption}">
+                        <p class="carousel-caption-large">${photo.caption}</p>
+                    </div>
+                `).join('')}
+            </div>
+            ${photos.length > 1 ? `
+                <button class="carousel-btn prev" onclick="moveCarousel('photoGroupCarousel', -1)">‹</button>
+                <button class="carousel-btn next" onclick="moveCarousel('photoGroupCarousel', 1)">›</button>
+                <div class="carousel-indicators">
+                    ${photos.map((_, i) => `<span class="dot ${i === startIndex ? 'active' : ''}" onclick="jumpToSlide('photoGroupCarousel', ${i})"></span>`).join('')}
+                </div>
+            ` : ''}
+        </div>
+    `;
+
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+
+    // 啟動自動輪播
+    if (photos.length > 1) {
+        setTimeout(() => startAutoCarousel('photoGroupCarousel', 4000), 100);
+    }
+}
+
+// 關閉證書彈窗
+function closeCertificateModal() {
+    const modal = document.getElementById('certificateModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    stopAllCarousels();
+
+    // 恢復原始modal結構
+    const modalContent = modal.querySelector('.certificate-modal-content');
+    modalContent.innerHTML = `
+        <span class="close-modal" onclick="closeCertificateModal()">&times;</span>
+        <h2 id="certificateModalTitle"></h2>
+        <img id="certificateModalImage" src="" alt="證書">
+        <p id="certificateModalDescription"></p>
+        <p id="certificateModalDate"></p>
+    `;
+}
+
+// 全局函數
+window.viewPhoto = viewPhoto;
+window.viewPhotoGroup = viewPhotoGroup;
+window.closeCertificateModal = closeCertificateModal;
 
 // 點擊彈窗外部關閉
 window.onclick = function (event) {
