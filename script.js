@@ -1170,9 +1170,14 @@ const timelineData = {
             { name: '第20屆貨櫃團隊最佳進步獎', image: 'images/certificates/container-award.jpg', portrait: true }
         ],
         photos: [
-            { src: 'images/aifinsys/fintech-hub.png', caption: '進駐香港科技園區' },
-            { src: 'images/aifinsys/hk-roadshow.jpg', caption: '2025香港科技園路演' },
-            { src: 'images/aifinsys/tea-party.jpg', caption: '進駐科技園區茶會' }
+            {
+                group: [
+                    { src: 'images/aifinsys/fintech-hub.png', caption: '進駐金融科技園區' },
+                    { src: 'images/aifinsys/tea-party.jpg', caption: '進駐科技園區茶會' }
+                ],
+                caption: '進駐金融科技園區'
+            },
+            { src: 'images/aifinsys/hk-roadshow.jpg', caption: '2025香港科技園路演' }
         ]
     },
     'tastebuddies': {
@@ -1285,13 +1290,55 @@ function openTimelineModal(experienceId) {
 
         photosGallery.innerHTML = '';
         if (data.photos && data.photos.length > 0) {
-            data.photos.forEach(photo => {
+            data.photos.forEach((photo, index) => {
                 const photoCard = document.createElement('div');
                 photoCard.className = 'photo-card';
-                photoCard.innerHTML = `
-                    <img src="${photo.src}" alt="${photo.caption}" onclick="viewPhoto('${photo.src}', '${photo.caption}')">
-                    <p>${photo.caption}</p>
-                `;
+
+                // 檢查是否為群組照片
+                if (photo.group && photo.group.length > 0) {
+                    // 建立carousel容器
+                    const carouselId = `carousel-${index}`;
+                    let carouselHTML = `
+                        <div class="photo-carousel" id="${carouselId}">
+                            <div class="carousel-track">
+                    `;
+
+                    photo.group.forEach((img, imgIndex) => {
+                        carouselHTML += `
+                            <div class="carousel-slide ${imgIndex === 0 ? 'active' : ''}">
+                                <img src="${img.src}" alt="${img.caption}" onclick="viewPhoto('${img.src}', '${img.caption}')">
+                                <p class="carousel-caption">${img.caption}</p>
+                            </div>
+                        `;
+                    });
+
+                    carouselHTML += `
+                            </div>
+                            ${photo.group.length > 1 ? `
+                                <button class="carousel-btn prev" onclick="moveCarousel('${carouselId}', -1)">‹</button>
+                                <button class="carousel-btn next" onclick="moveCarousel('${carouselId}', 1)">›</button>
+                                <div class="carousel-indicators">
+                                    ${photo.group.map((_, i) => `<span class="dot ${i === 0 ? 'active' : ''}" onclick="jumpToSlide('${carouselId}', ${i})"></span>`).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                        <p>${photo.caption}</p>
+                    `;
+
+                    photoCard.innerHTML = carouselHTML;
+
+                    // 啟動自動輪播
+                    if (photo.group.length > 1) {
+                        setTimeout(() => startAutoCarousel(carouselId, 3000), 100);
+                    }
+                } else {
+                    // 單張照片
+                    photoCard.innerHTML = `
+                        <img src="${photo.src}" alt="${photo.caption}" onclick="viewPhoto('${photo.src}', '${photo.caption}')">
+                        <p>${photo.caption}</p>
+                    `;
+                }
+
                 photosGallery.appendChild(photoCard);
             });
         } else {
@@ -1305,7 +1352,67 @@ function openTimelineModal(experienceId) {
 // 關閉經歷詳情彈窗
 function closeTimelineModal() {
     document.getElementById('timelineModal').style.display = 'none';
+    // 停止所有自動輪播
+    stopAllCarousels();
 }
+
+// Carousel控制函數
+let carouselIntervals = {};
+
+function moveCarousel(carouselId, direction) {
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const dots = carousel.querySelectorAll('.dot');
+    let currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+
+    slides[currentIndex].classList.remove('active');
+    if (dots[currentIndex]) dots[currentIndex].classList.remove('active');
+
+    currentIndex = (currentIndex + direction + slides.length) % slides.length;
+
+    slides[currentIndex].classList.add('active');
+    if (dots[currentIndex]) dots[currentIndex].classList.add('active');
+}
+
+function jumpToSlide(carouselId, index) {
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const dots = carousel.querySelectorAll('.dot');
+
+    slides.forEach(s => s.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+
+    slides[index].classList.add('active');
+    if (dots[index]) dots[index].classList.add('active');
+}
+
+function startAutoCarousel(carouselId, interval = 3000) {
+    // 停止現有輪播
+    if (carouselIntervals[carouselId]) {
+        clearInterval(carouselIntervals[carouselId]);
+    }
+
+    // 啟動新輪播
+    carouselIntervals[carouselId] = setInterval(() => {
+        moveCarousel(carouselId, 1);
+    }, interval);
+}
+
+function stopAllCarousels() {
+    Object.keys(carouselIntervals).forEach(id => {
+        clearInterval(carouselIntervals[id]);
+    });
+    carouselIntervals = {};
+}
+
+// 全局函數
+window.moveCarousel = moveCarousel;
+window.jumpToSlide = jumpToSlide;
+window.startAutoCarousel = startAutoCarousel;
 
 // 查看證書
 function viewCertificate(imageSrc, title, isPortrait = false, shouldRotate = false) {
