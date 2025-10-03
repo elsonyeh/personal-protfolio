@@ -1170,8 +1170,9 @@ const timelineData = {
             { name: '第20屆貨櫃團隊最佳進步獎', image: 'images/certificates/container-award.jpg', portrait: true }
         ],
         photos: [
-            { src: 'images/aifinsys/fintech-hub.jpg', caption: '進駐金融科技園區' },
-            { src: 'images/aifinsys/hk-roadshow.jpg', caption: '2025香港科技園路演' }
+            { src: 'images/aifinsys/fintech-hub.png', caption: '進駐金融科技園區' },
+            { src: 'images/aifinsys/hk-roadshow.jpg', caption: '2025香港科技園路演' },
+            { src: 'images/aifinsys/tea-party.jpg', caption: '進駐科技園區茶會' }
         ]
     },
     'tastebuddies': {
