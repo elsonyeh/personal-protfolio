@@ -16,7 +16,10 @@
       "Bash(ls:*)",
       "Bash(git commit -m \"$(cat <<''EOF''\n修正名次證明書顯示方式並移除via.placeholder錯誤\n\n主要修正:\n- 修正名次證明書為直向顯示(移除rotate屬性)\n- 移除所有圖片的via.placeholder.com備用網址\n- 移除onerror屬性以避免ERR_NAME_NOT_RESOLVED錯誤\n\n技術優化:\n- 名次證明書改為與100K證書相同的顯示邏輯(僅portrait: true)\n- 移除學生活動照片的placeholder備用網址\n- 移除成就區域證書的placeholder備用網址\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(git commit -m \"$(cat <<''EOF''\n將Google證書移至成就區域並清理範例證書\n\n主要修改:\n- 將Google數位行銷與Google Cloud證書移至「證書與成就」區域\n- 刪除不存在的範例證書(React Native、Firebase、UI/UX、Leadership)\n- 移除console.log除錯訊息,清理控制台輸出\n\n優化內容:\n- 成就區域現在只顯示實際存在的Google證書\n- 避免404錯誤(leadership-cert.jpg等不存在的檔案)\n- 清理不必要的控制台輸出\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Read(//c/Users/elson/Downloads/**)",
+      "Bash(start index.html)",
+      "Bash(dir:*)"
     ],
     "deny": [],
     "ask": []

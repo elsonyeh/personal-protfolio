@@ -1172,7 +1172,7 @@
                 </div>
 
                 <!-- 學生自治經驗 -->
-                <div class="portfolio-item leadership" data-aos="fade-up" data-aos-delay="450">
+                <div class="portfolio-item leadership" data-aos="fade-up" data-aos-delay="450" onclick="openProjectModal('leadership')">
                     <div class="portfolio-image">
                         <!-- Carousel for student activities -->
                         <div class="activity-carousel">
@@ -1194,20 +1194,13 @@
                                     <div class="carousel-caption">有Bear來聖誕Free Hug活動 (50+人)</div>
                                 </div>
                             </div>
-                            <button class="carousel-prev" onclick="changeSlide(this, -1)">&#10094;</button>
-                            <button class="carousel-next" onclick="changeSlide(this, 1)">&#10095;</button>
+                            <button class="carousel-prev" onclick="event.stopPropagation(); changeSlide(this, -1)">&#10094;</button>
+                            <button class="carousel-next" onclick="event.stopPropagation(); changeSlide(this, 1)">&#10095;</button>
                             <div class="carousel-dots">
-                                <span class="dot active" onclick="currentSlide(this, 0)"></span>
-                                <span class="dot" onclick="currentSlide(this, 1)"></span>
-                                <span class="dot" onclick="currentSlide(this, 2)"></span>
-                                <span class="dot" onclick="currentSlide(this, 3)"></span>
-                            </div>
-                        </div>
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-actions">
-                                <button class="action-btn" onclick="openProjectModal('leadership')">
-                                    <i class="fas fa-eye"></i>
-                                </button>
+                                <span class="dot active" onclick="event.stopPropagation(); currentSlide(this, 0)"></span>
+                                <span class="dot" onclick="event.stopPropagation(); currentSlide(this, 1)"></span>
+                                <span class="dot" onclick="event.stopPropagation(); currentSlide(this, 2)"></span>
+                                <span class="dot" onclick="event.stopPropagation(); currentSlide(this, 3)"></span>
                             </div>
                         </div>
                     </div>
@@ -1415,7 +1408,7 @@
                         <i class="fas fa-phone"></i>
                         <div>
                             <h3>Phone</h3>
-                            <p>0988-111203</p>
+                            <p>0988-111-203</p>
                         </div>
                     </div>
                     <div class="contact-item">

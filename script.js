@@ -43,6 +43,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 初始化證書彈窗
     initCertificateModals();
+
+    // 初始化修課統計動畫
+    initCoursesStatsAnimation();
 });
 
 // 載入動畫
@@ -179,7 +182,7 @@ function initNavigation() {
 
             if (targetSection) {
                 targetSection.scrollIntoView({
-                    behavior: 'smooth'
+                    behavior: 'auto'
                 });
             }
 
@@ -294,7 +297,7 @@ function initPortfolioFilter() {
 
 // 統計數字動畫
 function initStatsAnimation() {
-    const statNumbers = document.querySelectorAll('.stat-number');
+    const statNumbers = document.querySelectorAll('.about-stats .stat-number');
     let animated = false;
 
     const observer = new IntersectionObserver((entries) => {
@@ -462,7 +465,7 @@ function initProjectModals() {
                 '管理員後台：整合餐廳資料、標籤與地點管理，並提供用戶互動與數據分析功能，確保平台內容更新與系統優化。'
             ],
             image: 'images/projects/tastebuddies-cover.jpg',
-            video: 'https://www.youtube.com/embed/lnz3dtOpI50',
+            video: 'https://www.youtube.com/embed/bDN5JXtNWnA',
             tech: ['React Native', 'Supabase', 'UI/UX設計', '敏捷開發', 'Node.js', '即時互動'],
             demoLink: 'https://senior-project-ruby.vercel.app/',
             codeLink: '#',
@@ -482,11 +485,55 @@ function initProjectModals() {
             title: '學生自治與活動規劃',
             description: '曾任第十八屆學生議會副議長、選舉委員會主任委員、財務會主委、學生會活動部部長，曾經規劃多場大型校園活動，包括社團博覽會與社團展演等，最高曾吸引超過800人參與。負責舉辦心理健康推廣議題性活動，促進校園正向對話與關懷氛圍。同時我亦是學校多項正式會議的學生代表委員，實際參與校政研議與預算制度設計，累積豐富的議事經驗與跨單位溝通協調能力。',
             image: 'https://via.placeholder.com/600x400/f093fb/ffffff?text=Student+Leadership',
-            video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
             tech: ['活動規劃', '團隊領導', '跨部門溝通', '議事經驗', '學生代表', '心理健康推廣'],
-            demoLink: '#',
-            codeLink: '#',
-            presentationLink: '#'
+            activityPhotos: [
+                {
+                    name: '【山海奇航】社團聯展',
+                    photos: [
+                        { src: '活動/【山海奇航】社團聯展/社團聯展_1.jpg', caption: '社團聯展現場' }
+                    ]
+                },
+                {
+                    name: '【時光迴旋】43週年校慶系列活動',
+                    photos: [
+                        { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_0.jpg', caption: '43週年校慶活動回顧' },
+                        { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_1.jpg', caption: '校慶活動精彩瞬間' },
+                        { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_2.jpg', caption: '校慶活動現場' },
+                        { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_3.jpg', caption: '校慶活動花絮' },
+                        { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_4.jpg', caption: '校慶活動記錄' },
+                        { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_5.jpg', caption: '校慶團隊合影' },
+                        { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_6.jpg', caption: '校慶活動布置' },
+                        { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_7.jpg', caption: '校慶活動執行' },
+                        { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_8.jpg', caption: '校慶活動互動' },
+                        { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_9.jpg', caption: '校慶活動成果' },
+                        { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_10.jpg', caption: '校慶活動精選' }
+                    ]
+                },
+                {
+                    name: '【心情急轉彎】心輔議題活動',
+                    photos: [
+                        { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_1.jpg', caption: '心理健康推廣活動' },
+                        { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_2.jpg', caption: '心輔活動互動環節' },
+                        { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_3.jpg', caption: '心輔活動參與者' },
+                        { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_4.jpg', caption: '心輔活動現場氛圍' },
+                        { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_5.jpg', caption: '心輔活動交流' },
+                        { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_6.jpg', caption: '心輔活動分享' },
+                        { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_7.jpg', caption: '心輔活動溫馨時刻' },
+                        { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_8.jpg', caption: '心輔活動宣傳' },
+                        { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_9.jpg', caption: '心輔活動佈置' },
+                        { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_10.jpg', caption: '心輔活動團隊' },
+                        { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_11.jpg', caption: '心輔活動回顧' },
+                        { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_12.jpg', caption: '心輔活動精彩集錦' }
+                    ]
+                },
+                {
+                    name: '【有Bear來】聖誕Free Hug活動',
+                    photos: [
+                        { src: '活動/【有Bear來】聖誕Free Hug活動/freehug.jpg', caption: '聖誕Free Hug活動現場' },
+                        { src: '活動/【有Bear來】聖誕Free Hug活動/freehug2.jpg', caption: '聖誕節溫暖擁抱' }
+                    ]
+                }
+            ]
         },
         greenup: {
             title: 'GREENUP! 永續測驗平台',
@@ -552,8 +599,8 @@ function initProjectModals() {
         const videoContainer = document.getElementById('projectVideoContainer');
         const videoIframe = document.getElementById('modalVideo');
 
-        if (projectId === 'greenup' || projectId === 'aifinsys') {
-            // GREENUP 和中山永續金融科技不顯示影片
+        if (projectId === 'greenup' || projectId === 'aifinsys' || projectId === 'leadership') {
+            // GREENUP、中山永續金融科技、學生自治與活動規劃 不顯示影片
             videoContainer.style.display = 'none';
             videoIframe.src = '';
         } else if (project.video) {
@@ -595,7 +642,72 @@ function initProjectModals() {
         const linksContainer = modal.querySelector('.project-links');
 
         // 根據不同專案自訂按鈕文字和功能
-        if (projectId === 'eatmove') {
+        if (projectId === 'leadership') {
+            // 學生自治與活動規劃：顯示活動照片carousels
+            linksContainer.innerHTML = '<div class="activity-photos-section"></div>';
+            const photosSection = linksContainer.querySelector('.activity-photos-section');
+
+            if (project.activityPhotos && project.activityPhotos.length > 0) {
+                project.activityPhotos.forEach((activity, activityIndex) => {
+                    const activityDiv = document.createElement('div');
+                    activityDiv.className = 'activity-group';
+
+                    // 活動標題與metadata
+                    const titleDiv = document.createElement('div');
+                    titleDiv.className = 'activity-group-header';
+                    titleDiv.innerHTML = `
+                        <h4 class="activity-group-title">${activity.name}</h4>
+                        <div class="activity-meta-icons">
+                            ${activity.participants ? `<span class="meta-icon"><i class="fas fa-users"></i> ${activity.participants}</span>` : ''}
+                            ${activity.rating ? `<span class="meta-icon"><i class="fas fa-star"></i> ${activity.rating}</span>` : ''}
+                        </div>
+                    `;
+                    activityDiv.appendChild(titleDiv);
+
+                    // 如果只有一張照片,直接顯示
+                    if (activity.photos.length === 1) {
+                        const singlePhoto = activity.photos[0];
+                        const singlePhotoDiv = document.createElement('div');
+                        singlePhotoDiv.className = 'single-photo';
+                        singlePhotoDiv.innerHTML = `
+                            <img src="${singlePhoto.src}" alt="${singlePhoto.caption}" onclick="viewPhoto('${singlePhoto.src}', '${singlePhoto.caption}')">
+                            <p class="photo-caption">${singlePhoto.caption}</p>
+                        `;
+                        activityDiv.appendChild(singlePhotoDiv);
+                    } else {
+                        // 多張照片創建carousel
+                        const carouselId = `activity-carousel-${activityIndex}`;
+                        const carouselDiv = document.createElement('div');
+                        carouselDiv.className = 'activity-carousel';
+                        carouselDiv.id = carouselId;
+                        carouselDiv.setAttribute('data-carousel-id', carouselId);
+
+                        carouselDiv.innerHTML = `
+                            <div class="carousel-container">
+                                ${activity.photos.map((photo, photoIndex) => `
+                                    <div class="carousel-slide ${photoIndex === 0 ? 'active' : ''}">
+                                        <img src="${photo.src}" alt="${photo.caption}">
+                                        <p class="carousel-caption">${photo.caption}</p>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            ${activity.photos.length > 1 ? `
+                                <button class="carousel-btn prev" onclick="changeSlide(this, -1)">‹</button>
+                                <button class="carousel-btn next" onclick="changeSlide(this, 1)">›</button>
+                                <div class="carousel-indicators">
+                                    ${activity.photos.map((_, i) => `
+                                        <span class="dot ${i === 0 ? 'active' : ''}" onclick="currentSlide(this, ${i})"></span>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                        `;
+                        activityDiv.appendChild(carouselDiv);
+                    }
+
+                    photosSection.appendChild(activityDiv);
+                });
+            }
+        } else if (projectId === 'eatmove') {
             // EatMove 專案：查看Demo + 查看介紹
             linksContainer.innerHTML = `
                 <a href="${project.demoLink}" class="btn-primary" target="_blank">
@@ -653,7 +765,7 @@ window.scrollToSection = function (sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
         section.scrollIntoView({
-            behavior: 'smooth'
+            behavior: 'auto'
         });
     }
 };
@@ -860,14 +972,35 @@ function updateCoursesStats(filter) {
 // 統計動畫（修課歷程統計）
 function initCoursesStatsAnimation() {
     const statNumbers = document.querySelectorAll('.courses-summary .stat-number');
+
+    if (statNumbers.length === 0) {
+        return;
+    }
+
+    // 提前保存每個stat-number的目標值並設置data-target屬性
+    statNumbers.forEach(stat => {
+        const originalText = stat.textContent.trim();
+        const target = parseFloat(originalText);
+
+        if (!isNaN(target)) {
+            stat.setAttribute('data-target', originalText);
+            stat.textContent = '0';
+        }
+    });
+
     let animated = false;
 
     const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && !animated) {
             animated = true;
+
             statNumbers.forEach(stat => {
-                const target = parseFloat(stat.textContent);
-                animateCoursesCounter(stat, target);
+                const targetStr = stat.getAttribute('data-target');
+                const target = parseFloat(targetStr);
+
+                if (!isNaN(target)) {
+                    animateCoursesCounter(stat, target, targetStr);
+                }
             });
         }
     });
@@ -878,33 +1011,38 @@ function initCoursesStatsAnimation() {
     }
 }
 
-function animateCoursesCounter(element, target) {
-    let current = 0;
-    const increment = target / 100;
-    const isDecimal = target.toString().includes('.');
+function animateCoursesCounter(element, target, originalStr) {
+    // 驗證 target 是否為有效數字
+    if (isNaN(target) || target === null || target === undefined) {
+        element.textContent = originalStr;
+        return;
+    }
 
-    const timer = setInterval(() => {
-        current += increment;
+    const isDecimal = originalStr.includes('.');
+    const duration = 2000; // 2秒完成動畫
+    const startTime = Date.now();
 
-        if (isDecimal) {
-            element.textContent = current.toFixed(2);
-        } else {
-            element.textContent = Math.floor(current);
-        }
+    function updateCounter() {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
 
-        if (current >= target) {
+        const current = progress * target;
+
+        if (progress < 1) {
             if (isDecimal) {
-                element.textContent = target.toFixed(2);
+                element.textContent = current.toFixed(2);
             } else {
-                element.textContent = target;
+                element.textContent = Math.floor(current);
             }
-            clearInterval(timer);
+            requestAnimationFrame(updateCounter);
+        } else {
+            // 動畫結束，設置最終值
+            element.textContent = originalStr;
         }
-    }, 20);
-}
+    }
 
-// 初始化修課統計動畫
-initCoursesStatsAnimation();
+    requestAnimationFrame(updateCounter);
+}
 
 // 領導經歷彈窗功能
 function initLeadershipModals() {
@@ -1215,26 +1353,8 @@ function currentSlide(dot, index) {
     dots[index].classList.add('active');
 }
 
-// 自動輪播功能（可選）
-function initCarouselAutoplay() {
-    const carousels = document.querySelectorAll('.activity-carousel');
-
-    carousels.forEach(carousel => {
-        setInterval(() => {
-            const nextButton = carousel.querySelector('.carousel-next');
-            if (nextButton && !carousel.matches(':hover')) {
-                changeSlide(nextButton, 1);
-            }
-        }, 5000); // 每5秒自動切換
-    });
-}
-
-// 在頁面載入後啟動自動輪播
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initCarouselAutoplay);
-} else {
-    initCarouselAutoplay();
-}
+// 自動輪播功能已停用 - 避免頁面跳動
+// 用戶可以使用手動控制按鈕來切換照片
 
 // 經歷詳情資料庫
 const timelineData = {
@@ -1271,6 +1391,60 @@ const timelineData = {
             { name: '名次證明書', image: 'images/certificates/rank-certificate.jpg', portrait: true },
             { name: '2025年Google數位行銷學程結業證書', image: 'images/certificates/google-digital-marketing-cert.jpg' },
             { name: '2025年Google Cloud學程結業證書', image: 'images/certificates/google-cloud-cert.jpg' }
+        ],
+        photos: [
+            {
+                name: '【山海奇航】社團聯展',
+                participants: '1000+人',
+                photos: [
+                    { src: '活動/【山海奇航】社團聯展/社團聯展_1.jpg', caption: '社團聯展現場' }
+                ]
+            },
+            {
+                name: '【時光迴旋】43周年校慶系列活動',
+                participants: '1000+人',
+                rating: '9.1/10分',
+                photos: [
+                    { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_0.jpg', caption: '43週年校慶活動回顧' },
+                    { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_1.jpg', caption: '校慶活動精彩瞬間' },
+                    { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_2.jpg', caption: '校慶活動現場' },
+                    { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_3.jpg', caption: '校慶活動花絮' },
+                    { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_4.jpg', caption: '校慶活動記錄' },
+                    { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_5.jpg', caption: '校慶團隊合影' },
+                    { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_6.jpg', caption: '校慶活動布置' },
+                    { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_7.jpg', caption: '校慶活動執行' },
+                    { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_8.jpg', caption: '校慶活動互動' },
+                    { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_9.jpg', caption: '校慶活動成果' },
+                    { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_10.jpg', caption: '校慶活動精選' }
+                ]
+            },
+            {
+                name: '【心情急轉彎】心輔議題活動',
+                participants: '200+人',
+                rating: '9.03/10分',
+                photos: [
+                    { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_1.jpg', caption: '心理健康推廣活動' },
+                    { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_2.jpg', caption: '心輔活動互動環節' },
+                    { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_3.jpg', caption: '心輔活動參與者' },
+                    { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_4.jpg', caption: '心輔活動現場氛圍' },
+                    { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_5.jpg', caption: '心輔活動交流' },
+                    { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_6.jpg', caption: '心輔活動分享' },
+                    { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_7.jpg', caption: '心輔活動溫馨時刻' },
+                    { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_8.jpg', caption: '心輔活動宣傳' },
+                    { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_9.jpg', caption: '心輔活動佈置' },
+                    { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_10.jpg', caption: '心輔活動團隊' },
+                    { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_11.jpg', caption: '心輔活動回顧' },
+                    { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_12.jpg', caption: '心輔活動精彩集錦' }
+                ]
+            },
+            {
+                name: '【有Bear來】聖誕Free Hug活動',
+                participants: '50+人',
+                photos: [
+                    { src: '活動/【有Bear來】聖誕Free Hug活動/freehug.jpg', caption: '聖誕Free Hug活動現場' },
+                    { src: '活動/【有Bear來】聖誕Free Hug活動/freehug2.jpg', caption: '聖誕節溫暖擁抱' }
+                ]
+            }
         ]
     },
     'aifinsys': {
@@ -1309,7 +1483,7 @@ const timelineData = {
             { name: '配對演算法設計', description: '開發餐廳推薦配對演算法，整合個人與群組偏好', tech: 'Algorithm Design' },
             { name: '2025鹽夏不夜埕地方創生', description: '參與《鹽夏不夜埕-鹽來遮好呷》地方創生活動，運用自行蒐集及製作的鹽埕地區美食資料庫進行美食推薦，該推薦系統置於活動LINE官方帳號網頁中供消費者使用', tech: 'TasteBuddies + LINE平台', participants: '150人使用' },
             { name: '2025鹽埕奶茶節數據分析', description: '參與《鹽埕奶茶節》地方創生活動，針對參與奶茶節的餐廳及飲料店提供消費者美食推薦，並於TasteBuddies後台進行流量數據分析與成效評估', tech: '數據分析 + 後台系統', role: '技術支援與數據分析' },
-            { name: '專題Demo影片', description: 'TasteBuddies APP功能展示影片', video: 'https://youtube.com/shorts/lnz3dtOpI50' },
+            { name: '專題Demo影片', description: 'TasteBuddies APP功能展示影片', video: 'https://youtube.com/shorts/bDN5JXtNWnA' },
             { name: '中原大學100K創業競賽', description: '參加創新創業募資競賽', status: '已參賽' },
             { name: 'Design For Taiwan', description: '第十屆社會創新挑戰賽', status: '進入複賽' }
         ],
@@ -1393,12 +1567,12 @@ function openTimelineModal(experienceId) {
         certificatesGrid.innerHTML = '<p class="no-content">暫無相關證書</p>';
     }
 
-    // 生成照片圖庫（高中和中山大學不顯示照片區）
+    // 生成照片圖庫（只有高中不顯示照片區）
     const photosGallery = document.getElementById('timelinePhotosGallery');
     const photosSection = photosGallery.closest('.timeline-modal-section');
 
-    if (experienceId === 'high-school' || experienceId === 'nsysu') {
-        // 隱藏整個照片區域
+    if (experienceId === 'high-school') {
+        // 隱藏整個照片區域(僅高中)
         if (photosSection) {
             photosSection.style.display = 'none';
         }
@@ -1410,29 +1584,95 @@ function openTimelineModal(experienceId) {
 
         photosGallery.innerHTML = '';
         if (data.photos && data.photos.length > 0) {
-            data.photos.forEach((photo, index) => {
-                const photoCard = document.createElement('div');
-                photoCard.className = 'photo-card';
+            // 檢查是否為新的活動群組結構（有name和photos陣列）
+            const isActivityStructure = data.photos[0].name && data.photos[0].photos;
 
-                // 檢查是否為群組照片
-                if (photo.group && photo.group.length > 0) {
-                    // 在gallery只顯示第一張照片,點擊後打開carousel
-                    const firstPhoto = photo.group[0];
-                    const groupJson = JSON.stringify(photo.group).replace(/"/g, '&quot;');
-                    photoCard.innerHTML = `
-                        <img src="${firstPhoto.src}" alt="${photo.caption}" onclick="viewPhotoGroup('${groupJson}', 0)">
-                        <p>${photo.caption}</p>
-                    `;
-                } else {
-                    // 單張照片
-                    photoCard.innerHTML = `
-                        <img src="${photo.src}" alt="${photo.caption}" onclick="viewPhoto('${photo.src}', '${photo.caption}')">
-                        <p>${photo.caption}</p>
-                    `;
-                }
+            if (isActivityStructure) {
+                // 新的活動群組結構
+                data.photos.forEach((activity, activityIndex) => {
+                    const activityDiv = document.createElement('div');
+                    activityDiv.className = 'activity-group';
 
-                photosGallery.appendChild(photoCard);
-            });
+                    // 活動標題與metadata
+                    const titleDiv = document.createElement('div');
+                    titleDiv.className = 'activity-group-header';
+                    titleDiv.innerHTML = `
+                        <h4 class="activity-group-title">${activity.name}</h4>
+                        <div class="activity-meta-icons">
+                            ${activity.participants ? `<span class="meta-icon"><i class="fas fa-users"></i> ${activity.participants}</span>` : ''}
+                            ${activity.rating ? `<span class="meta-icon"><i class="fas fa-star"></i> ${activity.rating}</span>` : ''}
+                        </div>
+                    `;
+                    activityDiv.appendChild(titleDiv);
+
+                    // 如果只有一張照片,直接顯示
+                    if (activity.photos.length === 1) {
+                        const singlePhoto = activity.photos[0];
+                        const singlePhotoDiv = document.createElement('div');
+                        singlePhotoDiv.className = 'single-photo';
+                        singlePhotoDiv.innerHTML = `
+                            <img src="${singlePhoto.src}" alt="${singlePhoto.caption}" onclick="viewPhoto('${singlePhoto.src}', '${singlePhoto.caption}')">
+                            <p class="photo-caption">${singlePhoto.caption}</p>
+                        `;
+                        activityDiv.appendChild(singlePhotoDiv);
+                    } else {
+                        // 多張照片創建carousel
+                        const carouselId = `timeline-activity-carousel-${activityIndex}`;
+                        const carouselDiv = document.createElement('div');
+                        carouselDiv.className = 'activity-carousel';
+                        carouselDiv.id = carouselId;
+                        carouselDiv.setAttribute('data-carousel-id', carouselId);
+
+                        carouselDiv.innerHTML = `
+                            <div class="carousel-container">
+                                ${activity.photos.map((photo, photoIndex) => `
+                                    <div class="carousel-slide ${photoIndex === 0 ? 'active' : ''}">
+                                        <img src="${photo.src}" alt="${photo.caption}">
+                                        <p class="carousel-caption">${photo.caption}</p>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            ${activity.photos.length > 1 ? `
+                                <button class="carousel-btn prev" onclick="changeSlide(this, -1)">‹</button>
+                                <button class="carousel-btn next" onclick="changeSlide(this, 1)">›</button>
+                                <div class="carousel-indicators">
+                                    ${activity.photos.map((_, i) => `
+                                        <span class="dot ${i === 0 ? 'active' : ''}" onclick="currentSlide(this, ${i})"></span>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                        `;
+                        activityDiv.appendChild(carouselDiv);
+                    }
+
+                    photosGallery.appendChild(activityDiv);
+                });
+            } else {
+                // 舊的簡單照片結構（兼容性）
+                data.photos.forEach((photo, index) => {
+                    const photoCard = document.createElement('div');
+                    photoCard.className = 'photo-card';
+
+                    // 檢查是否為群組照片
+                    if (photo.group && photo.group.length > 0) {
+                        // 在gallery只顯示第一張照片,點擊後打開carousel
+                        const firstPhoto = photo.group[0];
+                        const groupJson = JSON.stringify(photo.group).replace(/"/g, '&quot;');
+                        photoCard.innerHTML = `
+                            <img src="${firstPhoto.src}" alt="${photo.caption}" onclick="viewPhotoGroup('${groupJson}', 0)">
+                            <p>${photo.caption}</p>
+                        `;
+                    } else {
+                        // 單張照片
+                        photoCard.innerHTML = `
+                            <img src="${photo.src}" alt="${photo.caption}" onclick="viewPhoto('${photo.src}', '${photo.caption}')">
+                            <p>${photo.caption}</p>
+                        `;
+                    }
+
+                    photosGallery.appendChild(photoCard);
+                });
+            }
         } else {
             photosGallery.innerHTML = '<p class="no-content">暫無活動照片</p>';
         }
