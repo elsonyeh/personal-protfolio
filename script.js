@@ -1460,7 +1460,22 @@ const timelineData = {
         description: '與同學高虂葳共同創辦中山永續金融科技股份有限公司(AI FinTech Corp.)，擔任業務經理一職。公司致力於開發AI氣候演算避險解決方案，擁有Ai+ESG金融科技避險的專利技術(專利申請中)。',
         activities: [
             { name: '官網建置與維護', description: '負責公司官網開發與維護', link: 'https://aifinsys.com' },
-            { name: '永續金融論壇籌備', description: '籌備2025年10月21日永續金融論壇', participants: '業界專家與學者' },
+            {
+                name: '2025永續金融科技創新投資國際論壇',
+                description: '主辦永續金融科技創新投資國際論壇，邀請國立中山大學李捷教授、國泰綜合證券數位資產部簡煒伶墾理與邱冠鈞講師，以及中山大學國際資產管理研究所王昭文所長擔任講師。論壇議題涵蓋綠色永續威脅智慧製造、傳統金融與區塊鏈的融合、STO實務案例等前沿主題。',
+                date: '2025年10月21日（星期二）9:00-12:00',
+                location: '高雄金融科技創新園區（高雄市前鎮區復興四路1號宏泰高雄創大樓2樓）',
+                speakers: [
+                    { name: '李捷教授', affiliation: '國立中山大學資訊管理學系', topic: '綠色永續威脅智慧製造', time: '9:10-10:10' },
+                    { name: '簡煒伶墾理', affiliation: '國泰綜合證券數位資產部', topic: '傳統金融與區塊鏈的融合', time: '10:10-11:10' },
+                    { name: '邱冠鈞講師', affiliation: '國泰綜合證券數位資產部', topic: 'STO之實務案例', time: '11:10-12:10' },
+                    { name: '王昭文所長', affiliation: '國立中山大學國際資產管理研究所', topic: '論壇專家諮詢時間', time: '12:10-12:30' }
+                ],
+                organizers: ['中山永續金融科技股份有限公司', '國立中山大學投資交易研究社'],
+                advisors: ['高雄市政府青年局', '國立中山大學管理學院'],
+                sponsor: '元大證券股份有限公司',
+                participants: '業界專家、學者與學生'
+            },
             { name: 'GREENUP!平台開發', description: '開發永續基礎發展能力測驗練習平台', link: 'https://greenup-sustainability-exam-platfor-three.vercel.app/', participants: '學習者' },
             { name: '進駐金融科技園區', description: '獲選進駐高雄金融科技創新園區', participants: '產學合作' }
         ],
@@ -1469,6 +1484,7 @@ const timelineData = {
             { name: '第20屆貨櫃團隊最佳進步獎', image: 'images/certificates/container-award.jpg', portrait: true }
         ],
         photos: [
+            { src: 'images/aifinsys/2025-forum-poster.jpg', caption: '2025永續金融科技創新投資國際論壇海報' },
             {
                 group: [
                     { src: 'images/aifinsys/fintech-hub.png', caption: '進駐金融科技園區' },
