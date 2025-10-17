@@ -489,12 +489,15 @@ function initProjectModals() {
             activityPhotos: [
                 {
                     name: '【山海奇航】社團聯展',
+                    participants: '1000+人',
                     photos: [
                         { src: '活動/【山海奇航】社團聯展/社團聯展_1.jpg', caption: '社團聯展現場' }
                     ]
                 },
                 {
                     name: '【時光迴旋】43週年校慶系列活動',
+                    participants: '1000+人',
+                    rating: '9.1/10分',
                     photos: [
                         { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_0.jpg', caption: '43週年校慶活動回顧' },
                         { src: '活動/【時光迴旋】43周年校慶系列活動/校慶_1.jpg', caption: '校慶活動精彩瞬間' },
@@ -511,6 +514,8 @@ function initProjectModals() {
                 },
                 {
                     name: '【心情急轉彎】心輔議題活動',
+                    participants: '200+人',
+                    rating: '9.03/10分',
                     photos: [
                         { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_1.jpg', caption: '心理健康推廣活動' },
                         { src: '活動/【心情急轉彎】心輔議題活動/心輔活動_2.jpg', caption: '心輔活動互動環節' },
@@ -528,6 +533,7 @@ function initProjectModals() {
                 },
                 {
                     name: '【有Bear來】聖誕Free Hug活動',
+                    participants: '50+人',
                     photos: [
                         { src: '活動/【有Bear來】聖誕Free Hug活動/freehug.jpg', caption: '聖誕Free Hug活動現場' },
                         { src: '活動/【有Bear來】聖誕Free Hug活動/freehug2.jpg', caption: '聖誕節溫暖擁抱' }

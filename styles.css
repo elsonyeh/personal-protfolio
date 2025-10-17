@@ -249,6 +249,8 @@ html {
     font-size: 36px;
     font-weight: 300;
     margin-bottom: 10px;
+    min-width: 280px;
+    min-height: 1.2em;
 }
 
 .name-highlight {
