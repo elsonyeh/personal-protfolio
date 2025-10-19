@@ -2838,28 +2838,41 @@ html {
     height: 12px;
 }
 
-/* 學生自治與活動規劃 - 活動照片區域樣式 */
-.activity-photos-section {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+/* ===== 中山大學活動照片區域 - 全新設計 ===== */
+
+/* 活動照片區域容器 - 大螢幕時一列兩欄 */
+.photos-gallery.activity-photos-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
     width: 100%;
+    padding: 0;
 }
 
+/* 單個活動組 */
 .activity-group {
     background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
-    border-radius: 15px;
-    padding: 25px;
-    border: 1px solid rgba(102, 126, 234, 0.1);
+    border-radius: 16px;
+    padding: 30px;
+    border: 1px solid rgba(102, 126, 234, 0.15);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
 }
 
+.activity-group:hover {
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.15);
+}
+
+/* 活動標題區域 */
 .activity-group-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     margin-bottom: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+    gap: 12px;
 }
 
 .activity-group-title {
@@ -2867,12 +2880,15 @@ html {
     font-weight: 600;
     color: var(--primary-color);
     margin: 0;
+    flex: 1 1 auto;
+    min-width: 200px;
 }
 
 .activity-meta-icons {
     display: flex;
-    gap: 15px;
+    gap: 12px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .meta-icon {
@@ -2881,7 +2897,7 @@ html {
     gap: 6px;
     background: rgba(102, 126, 234, 0.1);
     color: var(--primary-color);
-    padding: 6px 12px;
+    padding: 8px 14px;
     border-radius: 20px;
     font-size: 13px;
     font-weight: 500;
@@ -2892,68 +2908,213 @@ html {
     font-size: 14px;
 }
 
-.single-photo {
+/* 單張照片樣式 */
+.activity-photos-section .activity-group .single-photo {
     text-align: center;
+    background: #f7fafc;
+    border-radius: 12px;
+    padding: 20px;
 }
 
-.single-photo img {
+.activity-photos-section .activity-group .single-photo img {
     width: 100%;
-    max-height: 400px;
-    object-fit: contain;
-    border-radius: 12px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.single-photo img:hover {
-    transform: scale(1.02);
+.activity-photos-section .activity-group .single-photo img:hover {
+    transform: scale(1.03);
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
 }
 
-.photo-caption {
-    margin-top: 10px;
-    color: var(--text-light);
+.activity-photos-section .activity-group .photo-caption {
+    margin-top: 15px;
+    color: var(--text-color);
     font-size: 14px;
+    font-weight: 500;
+    padding: 12px 20px;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    line-height: 1.5;
+    text-align: left;
 }
 
-/* Activity Carousel 特殊樣式 - 避免高度跳動 */
+/* Carousel 容器 */
 .activity-group .activity-carousel {
-    min-height: 350px;
-    max-height: 450px;
+    position: relative;
+    width: 100%;
+    height: auto !important; /* 設定為auto以適應內容 */
+    background: #f7fafc;
+    border-radius: 12px;
+    padding: 20px;
+    overflow: visible; /* 確保內容不會被裁切 */
 }
 
-.activity-group .carousel-container {
+/* 使用更具體的選擇器來覆蓋通用的 .carousel-container */
+.activity-group .activity-carousel .carousel-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Carousel Slide - 使用更具體的選擇器 */
+.activity-group .activity-carousel .carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    min-height: 350px;
-}
-
-.activity-group .carousel-slide {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out;
+    z-index: 1;
+    pointer-events: none;
 }
 
-.activity-group .carousel-slide img {
-    max-height: 380px;
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    object-fit: contain;
+.activity-group .activity-carousel .carousel-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+    pointer-events: auto;
 }
 
-.activity-group .carousel-caption {
-    position: static;
-    background: none;
-    color: var(--text-light);
-    padding: 10px 0;
+.activity-group .activity-carousel .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Carousel Caption - 使用更具體的選擇器 */
+.activity-group .activity-carousel .carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    padding: 15px 20px;
+    padding-bottom: 50px; /* 固定底部padding，為indicators留出空間(15px indicators位置 + 35px空隙) */
     text-align: center;
-    font-size: 14px;
-    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    z-index: 3;
 }
 
-/* 響應式調整 - 經歷彈窗 */
+/* Carousel 按鈕 */
+.activity-group .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--primary-color);
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.activity-group .carousel-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.activity-group .carousel-btn.prev {
+    left: 5px;
+}
+
+.activity-group .carousel-btn.next {
+    right: 5px;
+}
+
+/* Carousel Indicators - 使用更具體的選擇器 */
+.activity-group .activity-carousel .carousel-indicators {
+    position: absolute;
+    bottom: 15px; /* 固定距離底部15px，所有螢幕寬度都相同 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 50;
+    padding: 8px 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.activity-group .carousel-indicators .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.activity-group .carousel-indicators .dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.3);
+}
+
+.activity-group .carousel-indicators .dot.active {
+    background: white;
+    transform: scale(1.4);
+}
+
+/* 響應式調整 - 平板 */
+@media (max-width: 1024px) {
+    .activity-photos-section {
+        gap: 30px;
+    }
+
+    .activity-group {
+        padding: 25px;
+    }
+
+    .activity-group .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .activity-group .carousel-btn.prev {
+        left: 5px;
+    }
+
+    .activity-group .carousel-btn.next {
+        right: 5px;
+    }
+}
+
+/* 響應式調整 - 中小螢幕 (平板/手機橫向) - 改為一列一欄 */
 @media (max-width: 768px) {
     .timeline-modal-content {
         max-width: 95%;
@@ -2981,26 +3142,55 @@ html {
         font-size: 1.1rem;
     }
 
-    .activity-photos-section {
-        gap: 30px;
+    /* 中小螢幕改為一列一欄 */
+    .photos-gallery.activity-photos-section {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        width: 100%;
     }
 
-    .activity-group {
+    .photos-gallery.activity-photos-section .activity-group {
         padding: 20px;
+        width: 100%;
+        max-width: 100%;
     }
 
-    .activity-group .activity-carousel {
-        min-height: 300px;
-        max-height: 400px;
+    .photos-gallery.activity-photos-section .activity-group .activity-carousel {
+        padding: 15px;
+        padding-bottom: 50px;
+        width: 100%;
     }
 
-    .activity-group .carousel-container {
-        min-height: 300px;
+    .photos-gallery.activity-photos-section .activity-group .activity-carousel .carousel-container {
+        width: 100%;
+        max-width: 100%;
     }
 
-    .activity-group .carousel-slide img {
-        max-height: 280px;
+    .photos-gallery.activity-photos-section .activity-group .activity-carousel .carousel-caption {
+        font-size: 12px;
+        padding: 12px 15px;
+        padding-bottom: 50px; /* 保持固定的底部空隙 */
     }
+
+    .activity-group .carousel-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+    .activity-group .carousel-btn.prev {
+        left: 5px;
+    }
+
+    .activity-group .carousel-btn.next {
+        right: 5px;
+    }
+
+    .activity-group .carousel-indicators .dot {
+        width: 7px;
+        height: 7px;
+    }
+}
 
     .activity-group-header {
         flex-direction: column;
@@ -3008,8 +3198,84 @@ html {
         gap: 10px;
     }
 
+    .activity-group-title {
+        font-size: 18px;
+        min-width: 100%;
+    }
+
     .activity-meta-icons {
         flex-wrap: wrap;
         gap: 10px;
+        width: 100%;
+    }
+
+    .meta-icon {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}
+
+/* 響應式調整 - 手機 (520px以下一列一欄) */
+@media (max-width: 520px) {
+    .photos-gallery.activity-photos-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .photos-gallery.activity-photos-section .activity-group {
+        padding: 15px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .photos-gallery.activity-photos-section .activity-group .activity-carousel {
+        padding: 12px;
+        padding-bottom: 45px;
+        width: 100%;
+    }
+
+    .photos-gallery.activity-photos-section .activity-group .activity-carousel .carousel-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .photos-gallery.activity-photos-section .activity-group .activity-carousel .carousel-caption {
+        font-size: 11px;
+        padding: 10px 12px;
+        padding-bottom: 50px; /* 保持固定的底部空隙 */
+    }
+
+    .activity-group .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .activity-group .carousel-btn.prev {
+        left: 5px;
+    }
+
+    .activity-group .carousel-btn.next {
+        right: 5px;
+    }
+
+    .activity-group .carousel-indicators {
+        padding: 6px 12px;
+        gap: 6px;
+    }
+
+    .activity-group .carousel-indicators .dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .activity-group-title {
+        font-size: 18px;
+    }
+
+    .meta-icon {
+        font-size: 12px;
+        padding: 6px 10px;
     }
 }

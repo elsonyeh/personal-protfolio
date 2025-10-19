@@ -491,7 +491,7 @@ function initProjectModals() {
                     name: '【山海奇航】社團聯展',
                     participants: '1000+人',
                     photos: [
-                        { src: '活動/【山海奇航】社團聯展/社團聯展_1.jpg', caption: '社團聯展現場' }
+                        { src: '活動/【山海奇航】社團聯展/社團聯展_1.jpg', caption: '社團聯展海報' }
                     ]
                 },
                 {
@@ -1369,10 +1369,7 @@ const timelineData = {
         period: '2019 - 2022',
         position: '學生會活動長、畢聯會活動長',
         description: '高中階段就讀師大附中，培養多元興趣與學習基礎，並參與學生自治擔任學生會活動長與畢聯會活動長，累積活動規劃經驗。透過參與學生會活動，學習如何組織大型校園活動、與不同部門溝通協調，以及預算規劃與執行。',
-        activities: [
-            { name: '學生會活動規劃', description: '擔任學生會活動長，規劃並執行多場校園活動', participants: '全校師生參與' },
-            { name: '畢業舞會籌備', description: '擔任畢聯會活動長，負責畢業相關活動籌備', participants: '應屆畢業生' }
-        ],
+        activities: [],
         certificates: []
     },
     'nsysu': {
@@ -1610,7 +1607,9 @@ function openTimelineModal(experienceId) {
             const isActivityStructure = data.photos[0].name && data.photos[0].photos;
 
             if (isActivityStructure) {
-                // 新的活動群組結構
+                // 新的活動群組結構 - 添加專用class以覆蓋grid佈局
+                photosGallery.className = 'photos-gallery activity-photos-section';
+
                 data.photos.forEach((activity, activityIndex) => {
                     const activityDiv = document.createElement('div');
                     activityDiv.className = 'activity-group';
@@ -1670,7 +1669,9 @@ function openTimelineModal(experienceId) {
                     photosGallery.appendChild(activityDiv);
                 });
             } else {
-                // 舊的簡單照片結構（兼容性）
+                // 舊的簡單照片結構（兼容性） - 恢復grid佈局
+                photosGallery.className = 'photos-gallery';
+
                 data.photos.forEach((photo, index) => {
                     const photoCard = document.createElement('div');
                     photoCard.className = 'photo-card';
