@@ -3169,7 +3169,7 @@ html {
     .photos-gallery.activity-photos-section .activity-group .activity-carousel .carousel-caption {
         font-size: 12px;
         padding: 12px 15px;
-        padding-bottom: 50px; /* 保持固定的底部空隙 */
+        padding-bottom: 20px; /* 保持固定的底部空隙 */
     }
 
     .activity-group .carousel-btn {
@@ -3243,7 +3243,7 @@ html {
     .photos-gallery.activity-photos-section .activity-group .activity-carousel .carousel-caption {
         font-size: 11px;
         padding: 10px 12px;
-        padding-bottom: 50px; /* 保持固定的底部空隙 */
+        padding-bottom: 20px; /* 保持固定的底部空隙 */
     }
 
     .activity-group .carousel-btn {
