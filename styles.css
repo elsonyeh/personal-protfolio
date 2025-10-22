@@ -1072,6 +1072,10 @@ html {
 
 .achievements-section .section-title {
     color: white;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: white;
+    background-clip: unset;
 }
 
 .achievements-content {
